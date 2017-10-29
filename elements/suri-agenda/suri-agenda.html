@@ -8,10 +8,10 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="shared-styles.html">
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../styles/shared-styles.html">
 
-<dom-module id="my-view2">
+<dom-module id="suri-agenda">
   <template>
     <style include="shared-styles">
       :host {
@@ -29,11 +29,5 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </div>
   </template>
 
-  <script>
-    class MyView2 extends Polymer.Element {
-      static get is() { return 'my-view2'; }
-    }
-
-    window.customElements.define(MyView2.is, MyView2);
-  </script>
+  <script src='suri-agenda.js'></script>
 </dom-module>

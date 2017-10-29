@@ -1,15 +1,16 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/my-app.html",
+  "shell": "elements/my-app/my-app.html",
   "fragments": [
-    "src/my-view1.html",
-    "src/my-view2.html",
-    "src/my-view3.html",
-    "src/my-view404.html"
+    "elements/suri-welcome/suri-welcome.html",
+    "elements/suri-agenda/suri-agenda.html",
+    "elements/suri-roadmap/suri-roadmap.html",
+    "elements/suri-404/suri-404.html"
   ],
   "sources": [
-    "src/**/*",
-    "images/**/*"
+    "elements/**/*",
+    "images/**/*",
+    "styles/**/*"
   ],
   "extraDependencies": [
     "manifest.json",

@@ -1,21 +1,134 @@
 {
-  "extends": ["eslint:recommended", "google"],
-  "parserOptions": {
-    "ecmaVersion": 6
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "array-bracket-spacing": [
+      "error",
+      "never"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "block-spacing": [
+      "error",
+      "always"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "comma-style": [
+      "error",
+      "last"
+    ],
+    "semi-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": true,
+        "objectsInObjects": true
+      }
+    ],
+    "max-depth": [
+      "off",
+      4
+    ],
+    "no-mixed-spaces-and-tabs": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "space-before-blocks": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2,
+        "maxEOF": 1
+      }
+    ],
+    "lines-between-class-members": [
+      "error",
+      "always"
+    ],
+    "no-trailing-spaces": "error",
+    "valid-jsdoc": [
+      "warn",
+      {
+        "requireReturn": false,
+        "prefer": {
+          "arg": "param",
+          "argument": "param",
+          "returns": "return"
+        },
+        "preferType": {
+          "Boolean": "boolean",
+          "Number": "number",
+          "String": "string",
+          "object": "Object",
+          "array": "Array"
+        }
+      }
+    ]
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
   },
   "plugins": [
     "html"
   ],
-  "rules": {
-    "brace-style": "off",
-    "new-cap": ["error", { "capIsNewExceptions": ["Polymer"] }],
-    "no-var": "off",
-    "require-jsdoc": "off"
-  },
   "globals": {
-    "Polymer": true
+    "Polymer": false,
   }
 }

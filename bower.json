@@ -1,9 +1,6 @@
 {
-  "name": "polymer-starter-kit",
-  "authors": [
-    "The Polymer Authors"
-  ],
-  "license": "https://polymer.github.io/LICENSE.txt",
+  "name": "wedding.suricatos.life",
+  "version": "0.1.0",
   "dependencies": {
     "app-layout": "PolymerElements/app-layout#^2.0.0",
     "app-route": "PolymerElements/app-route#^2.0.0",
