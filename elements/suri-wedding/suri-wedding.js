@@ -1,8 +1,8 @@
 (function () {
 
-  class MyApp extends Polymer.Element {
+  class SuriWedding extends Polymer.Element {
     static get is() {
-      return 'my-app';
+      return 'suri-wedding';
     }
 
     static get properties() {
@@ -52,5 +52,5 @@
     }
   }
 
-  window.customElements.define(MyApp.is, MyApp);
+  window.customElements.define(SuriWedding.is, SuriWedding);
 })();

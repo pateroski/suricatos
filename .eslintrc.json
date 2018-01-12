@@ -129,6 +129,6 @@
     "html"
   ],
   "globals": {
-    "Polymer": false,
+    "Polymer": false
   }
 }

@@ -1,6 +1,6 @@
 {
   "entrypoint": "index.html",
-  "shell": "elements/my-app/my-app.html",
+  "shell": "elements/suri-wedding/suri-wedding.html",
   "fragments": [
     "elements/suri-welcome/suri-welcome.html",
     "elements/suri-agenda/suri-agenda.html",

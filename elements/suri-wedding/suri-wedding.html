@@ -27,7 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="../elements/suri-roadmap/suri-roadmap.html">
 <link rel="lazy-import" href="../elements/suri-404/suri-404.html">
 
-<dom-module id="my-app">
+<dom-module id="suri-wedding">
   <template>
     <style>
       :host {
@@ -68,21 +68,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <app-location
-        route="{{route}}"
-        url-space-regex="^[[rootPath]]">
+    <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
     </app-location>
 
-    <app-route
-        route="{{route}}"
-        pattern="[[rootPath]]:page"
-        data="{{routeData}}"
-        tail="{{subroute}}">
+    <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}">
     </app-route>
 
-    <app-drawer-layout fullbleed narrow="{{narrow}}">
+    <app-drawer-layout fullbleed force-narrow>
       <!-- Drawer content -->
-      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+      <app-drawer id="drawer" slot="drawer">
         <app-toolbar>Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
@@ -94,18 +88,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
 
-        <app-header slot="header" condenses reveals effects="waterfall">
+        <app-header slot="header" fixed condenses effects="waterfall">
+
           <app-toolbar>
+
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>My App</div>
+
+            <div main-title>Suricatos</div>
+
+
           </app-toolbar>
+
         </app-header>
 
-        <iron-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="404"
-            role="main">
+        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="404" role="main">
           <suri-welcome name="welcome"></suri-welcome>
           <suri-agenda name="agenda"></suri-agenda>
           <suri-roadmap name="roadmap"></suri-roadmap>
@@ -115,5 +111,5 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </app-drawer-layout>
   </template>
 
-  <script src="my-app.js"></script>
+  <script src="suri-wedding.js"></script>
 </dom-module>

@@ -1,7 +1,7 @@
 {
-  "name": "My App",
-  "short_name": "My App",
-  "description": "My App description",
+  "name": "Suricatos Wedding",
+  "short_name": "Suricatos Wedding",
+  "description": "Static page for Suricatos weeding",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",
@@ -14,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "/welcome",
   "display": "standalone",
   "theme_color": "#3f51b5",
   "background_color": "#3f51b5"
