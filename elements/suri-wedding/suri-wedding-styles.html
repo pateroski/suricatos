@@ -15,62 +15,130 @@
 
       app-header {
         color: #fff;
-        background-color: var (--app-primary-color)
-      }
+        background-color: var( --app-primary-color );
 
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: #fff
+        --app-header-background-rear-layer: {
+          /* The header is blue when condensed */
+          background-color: rgb( 160, 143, 236 )
+        };
       }
 
       /** Drawer **/
-      .drawer-list {
-        margin: 0 20px
+
+      .drawer-header {
+        padding: 16px 0 0
+      }
+
+      .drawer-title {
+        font-family: var( --suri-fontMountains );
+        text-align: center;
+        text-decoration: underline;
+        font-size: 35px;
+        width: 100%
       }
 
       .drawer-list a {
         font-family: var( --suri-fontMountains );
+        font-size: 20px;
         display: block;
-        padding: 0 16px;
+        padding: 10px 16px;
         color: var( --app-secondary-color );
-        text-decoration: none;
-        line-height: 40px
+        text-decoration: none
       }
 
       /** Main header **/
       .main-header {
-        height: 300px;
+        height: 400px;
         position: relative
       }
 
-      /** Main toolbar **/
       .main-toolbar {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0
+        height: 100px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 0
       }
 
-      /** Header menu **/
-      .tabs-list {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin: 10px 0
+      .drawer-toggle {
+        --paper-icon-button-ink-color: #fff;
+        --paper-icon-button: {
+          color: #000
+        }
       }
 
-      .tabs-list a {
+      .main-title,
+      .condensed-title {
         font-family: var( --suri-fontMountains );
-        text-decoration: none;
-        margin: 0 30px;
-        font-size: 24px
+        font-size: 38px;
+        color: #000;
+        text-align: center;
+        flex-basis: 100%
       }
 
-      .tabs-list a:hover,
-      .tabs-list a:visited,
-      .tabs-list a:focus,
-      .tab-list a:active {
-        color: #000
+      .condensed-title {
+        font-size: 28px
       }
+
+      .nav-toolbar {
+        display: none
+      }
+
+      /**
+       * Desktop
+       */
+      @media (min-width: 768px) {
+        /** Main header **/
+        .main-header {
+          height: 500px
+        }
+
+        .drawer-toggle {
+          display: none
+        }
+
+        .main-title {
+          font-size: 80px;
+          color: #000;
+          text-align: center
+        }
+
+        /** Main toolbar **/
+        .main-toolbar {
+          height: 100%
+        }
+
+        /** Nav toolbar **/
+        .nav-toolbar {
+          display: initial;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0
+        }
+
+        /** Header menu **/
+        .tabs-list {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 10px 0
+        }
+
+        .tabs-list a {
+          font-family: var( --suri-fontMountains );
+          text-decoration: none;
+          margin: 0 30px;
+          font-size: 24px
+        }
+
+        .tabs-list a:hover,
+        .tabs-list a:visited,
+        .tabs-list a:focus,
+        .tab-list a:active {
+          color: #000
+        }
+      }
+
     </style>
   </template>
 

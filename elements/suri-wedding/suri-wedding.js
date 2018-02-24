@@ -17,6 +17,10 @@
         // This shouldn't be neccessary, but the Analyzer isn't picking up
         // Polymer.Element#rootPath
         rootPath: String,
+
+        _isDesktop: {
+          type: Boolean
+        }
       };
     }
 

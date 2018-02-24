@@ -20,6 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-media-query/iron-media-query.html">
 
 <link rel="lazy-import" href="../elements/suri-welcome/suri-welcome.html">
 <link rel="lazy-import" href="../elements/suri-agenda/suri-agenda.html">
@@ -40,13 +41,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}">
     </app-route>
 
+    <iron-media-query query="min-width: 768px" query-matches="{{_isDesktop}}"></iron-media-query>
+
     <app-drawer-layout fullbleed force-narrow>
 
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer">
 
-        <app-toolbar>Menu</app-toolbar>
-
+        <app-toolbar class="drawer-header">
+          <header class="drawer-title">
+            Menú
+          </header>
+        </app-toolbar>
         <nav>
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
@@ -63,25 +69,55 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
 
-        <app-header class="main-header" slot="header" fixed condenses effects="waterfall">
+        <app-header class="main-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title">
 
-          <app-toolbar class="main-toolbar" sticky>
+          <template is="dom-if" if="[[!_isDesktop]]" restamp="true">
 
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+            <app-toolbar class="main-toolbar" sticky>
+              <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
+              </paper-icon-button>
+              <header class="condensed-title" condensed-title>
+                Suricatos Wedding
+              </header>
+              <header class="main-title" main-title>
+                Suricatos Wedding
+              </header>
 
-            <div main-title top-item>Suricatos</div>
+            </app-toolbar>
 
-            <nav class="tabs" bottom-item sticky>
-              <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation">
-                <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
-                <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
-                <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
-                <a name="place" href="[[rootPath]]place">Lugar</a>
-                <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
-              </iron-selector>
-            </nav>
+          </template>
 
-          </app-toolbar>
+
+          <template is="dom-if" if="[[_isDesktop]]" restamp="true">
+
+            <app-toolbar class="main-toolbar">
+
+              <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
+              </paper-icon-button>
+
+              <header class="main-title" main-title>
+                Suricatos Wedding
+              </header>
+
+            </app-toolbar>
+
+            <app-toolbar class="nav-toolbar" sticky>
+
+              <nav class="tabs" bottom-item sticky>
+
+                <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation">
+                  <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
+                  <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
+                  <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
+                  <a name="place" href="[[rootPath]]place">Lugar</a>
+                  <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
+                </iron-selector>
+
+              </nav>
+
+            </app-toolbar>
+          </template>
+
 
         </app-header>
 
