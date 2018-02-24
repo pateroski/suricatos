@@ -20,52 +20,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../../styles/my-icons.html">
 
 <link rel="lazy-import" href="../elements/suri-welcome/suri-welcome.html">
 <link rel="lazy-import" href="../elements/suri-agenda/suri-agenda.html">
 <link rel="lazy-import" href="../elements/suri-roadmap/suri-roadmap.html">
 <link rel="lazy-import" href="../elements/suri-404/suri-404.html">
+<link rel="lazy-import" href="../elements/suri-attendance/suri-attendance.html">
+<link rel="import" href="../../styles/my-theme.html">
+<link rel="import" href="suri-wedding-styles.html">
 
 <dom-module id="suri-wedding">
   <template>
-    <style>
-      :host {
-        --app-primary-color: #4285f4;
-        --app-secondary-color: black;
-
-        display: block;
-      }
-
-      app-drawer-layout:not([narrow]) [drawer-toggle] {
-        display: none;
-      }
-
-      app-header {
-        color: #fff;
-        background-color: var(--app-primary-color);
-      }
-
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: white;
-      }
-
-      .drawer-list {
-        margin: 0 20px;
-      }
-
-      .drawer-list a {
-        display: block;
-        padding: 0 16px;
-        text-decoration: none;
-        color: var(--app-secondary-color);
-        line-height: 40px;
-      }
-
-      .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
-      }
+    <style include="suri-wedding-styles">
     </style>
 
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
@@ -75,27 +41,45 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </app-route>
 
     <app-drawer-layout fullbleed force-narrow>
+
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer">
+
         <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
-          <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
-          <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
-        </iron-selector>
+
+        <nav>
+          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+            <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
+            <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
+            <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
+            <a name="place" href="[[rootPath]]place">Lugar</a>
+            <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
+          </iron-selector>
+
+        </nav>
+
       </app-drawer>
 
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
 
-        <app-header slot="header" fixed condenses effects="waterfall">
+        <app-header class="main-header" slot="header" fixed condenses effects="waterfall">
 
-          <app-toolbar>
+          <app-toolbar class="main-toolbar" sticky>
 
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
 
-            <div main-title>Suricatos</div>
+            <div main-title top-item>Suricatos</div>
 
+            <nav class="tabs" bottom-item sticky>
+              <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation">
+                <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
+                <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
+                <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
+                <a name="place" href="[[rootPath]]place">Lugar</a>
+                <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
+              </iron-selector>
+            </nav>
 
           </app-toolbar>
 
@@ -106,7 +90,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <suri-agenda name="agenda"></suri-agenda>
           <suri-roadmap name="roadmap"></suri-roadmap>
           <suri-404 name="404"></suri-404>
+          <suri-place name="place"></suri-place>
+          <suri-attendance name="attendance"></suri-attendance>
         </iron-pages>
+
       </app-header-layout>
     </app-drawer-layout>
   </template>

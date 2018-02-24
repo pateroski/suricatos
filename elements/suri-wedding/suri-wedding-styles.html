@@ -1,0 +1,77 @@
+<dom-module id="suri-wedding-styles">
+
+  <template>
+    <style>
+      :host {
+        --app-primary-color: #fff;
+        --app-secondary-color: #000;
+        display: block
+      }
+
+      /** Layout **/
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none
+      }
+
+      app-header {
+        color: #fff;
+        background-color: var (--app-primary-color)
+      }
+
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: #fff
+      }
+
+      /** Drawer **/
+      .drawer-list {
+        margin: 0 20px
+      }
+
+      .drawer-list a {
+        font-family: var( --suri-fontMountains );
+        display: block;
+        padding: 0 16px;
+        color: var( --app-secondary-color );
+        text-decoration: none;
+        line-height: 40px
+      }
+
+      /** Main header **/
+      .main-header {
+        height: 300px;
+        position: relative
+      }
+
+      /** Main toolbar **/
+      .main-toolbar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0
+      }
+
+      /** Header menu **/
+      .tabs-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 10px 0
+      }
+
+      .tabs-list a {
+        font-family: var( --suri-fontMountains );
+        text-decoration: none;
+        margin: 0 30px;
+        font-size: 24px
+      }
+
+      .tabs-list a:hover,
+      .tabs-list a:visited,
+      .tabs-list a:focus,
+      .tab-list a:active {
+        color: #000
+      }
+    </style>
+  </template>
+
+</dom-module>

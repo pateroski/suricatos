@@ -9,15 +9,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="suri-404-styles.html">
 
 <dom-module id="suri-404">
   <template>
-    <style>
-      :host {
-        display: block;
-
-        padding: 10px 20px;
-      }
+    <style include="suri-404-styles">
     </style>
 
     Oops you hit a 404. <a href="[[rootPath]]">Head back to home.</a>
