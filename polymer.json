@@ -5,7 +5,9 @@
     "elements/suri-welcome/suri-welcome.html",
     "elements/suri-agenda/suri-agenda.html",
     "elements/suri-roadmap/suri-roadmap.html",
-    "elements/suri-404/suri-404.html"
+    "elements/suri-404/suri-404.html",
+    "elements/suri-attendance/suri-attendance.html",
+    "elements/suri-place/suri-place.html"
   ],
   "sources": [
     "elements/**/*",
