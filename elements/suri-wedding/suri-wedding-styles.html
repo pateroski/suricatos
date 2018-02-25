@@ -15,11 +15,14 @@
 
       app-header {
         color: #fff;
-        background-color: var( --app-primary-color );
+        background-color: transparent;
 
         --app-header-background-rear-layer: {
-          /* The header is blue when condensed */
-          background-color: rgb( 160, 143, 236 )
+          background-color: #fff
+        };
+
+        --app-header-background-front-layer: {
+          background-image: url( '/images/suricatos_2.jpg' )
         };
       }
 
@@ -43,7 +46,12 @@
         display: block;
         padding: 10px 16px;
         color: var( --app-secondary-color );
-        text-decoration: none
+        text-decoration: none;
+        outline: none
+      }
+
+      .drawer-list a.iron-selected {
+        color: rgb( 223, 89, 72 )
       }
 
       /** Main header **/
@@ -60,6 +68,7 @@
       }
 
       .drawer-toggle {
+        align-self: flex-start;
         --paper-icon-button-ink-color: #fff;
         --paper-icon-button: {
           color: #000
@@ -81,6 +90,28 @@
 
       .nav-toolbar {
         display: none
+      }
+
+      .logo {
+        flex-basis: 20%;
+        display: none;
+        justify-content: center;
+        margin: 0
+      }
+
+      .circle {
+        font-family: var( --suri-fontMountains );
+        font-size: 30px;
+        background-color: #008000;
+        color: #000000;
+        border-radius: 50%;
+        width: 170px;
+        height: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 25px
       }
 
       /**
@@ -109,7 +140,10 @@
 
         /** Nav toolbar **/
         .nav-toolbar {
-          display: initial;
+          display: flex;
+          justify-content: center;
+          flex-wrap: nowrap;
+          height: 120px;
           position: absolute;
           bottom: 0;
           left: 0;
@@ -117,17 +151,29 @@
         }
 
         /** Header menu **/
+
+        .tabs {
+          flex-basis: 100%
+        }
+
+        .tabs-left {
+          flex-basis: 40%
+        }
+
+        .tabs-right {
+          flex-basis: 40%
+        }
+
         .tabs-list {
           display: flex;
           flex-direction: row;
-          justify-content: center;
+          justify-content: space-around;
           margin: 10px 0
         }
 
         .tabs-list a {
           font-family: var( --suri-fontMountains );
           text-decoration: none;
-          margin: 0 30px;
           font-size: 24px
         }
 
@@ -136,6 +182,32 @@
         .tabs-list a:focus,
         .tab-list a:active {
           color: #000
+        }
+
+        .tabs-list a.iron-selected {
+          color: #df5948
+        }
+
+        .logo {
+          flex-basis: 20%;
+          display: none;
+          justify-content: center;
+          margin: 0
+        }
+
+        .circle {
+          font-family: var( --suri-fontMountains );
+          font-size: 30px;
+          background-color: #008000;
+          color: #000000;
+          border-radius: 50%;
+          width: 170px;
+          height: 170px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          top: 25px
         }
       }
 

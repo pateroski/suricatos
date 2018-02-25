@@ -19,7 +19,7 @@
         rootPath: String,
 
         _isDesktop: {
-          type: Boolean
+          type: Boolean,
         }
       };
     }
@@ -28,6 +28,16 @@
       return [
         '_routePageChanged(routeData.page)',
       ];
+    }
+
+
+    _showLogo(ev) {
+      const element = this.shadowRoot.querySelector('.logo');
+      if (ev.detail.value === true) {
+        element.style.display = 'flex';
+      } else {
+        element.style.display = 'none';
+      }
     }
 
     _routePageChanged(page) {

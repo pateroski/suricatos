@@ -27,6 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="../elements/suri-roadmap/suri-roadmap.html">
 <link rel="lazy-import" href="../elements/suri-404/suri-404.html">
 <link rel="lazy-import" href="../elements/suri-attendance/suri-attendance.html">
+<link rel="lazy-import" href="../elements/suri-needs/suri-needs.html">
 <link rel="import" href="../../styles/my-theme.html">
 <link rel="import" href="suri-wedding-styles.html">
 
@@ -54,10 +55,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </header>
         </app-toolbar>
         <nav>
-          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation" selected="welcome">
             <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
             <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
             <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
+            <a name="needs" href="[[rootPath]]needs">Necesito...</a>
             <a name="place" href="[[rootPath]]place">Lugar</a>
             <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
           </iron-selector>
@@ -69,16 +71,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
 
-        <app-header class="main-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title">
+        <app-header class="main-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title" threshold="400" on-threshold-triggered-changed="_showLogo">
 
           <template is="dom-if" if="[[!_isDesktop]]" restamp="true">
 
             <app-toolbar class="main-toolbar" sticky>
               <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
               </paper-icon-button>
-              <header class="condensed-title" condensed-title>
-                Suricatos Wedding
-              </header>
+
+              <figure class="logo" condensed-title>
+                <div class="circle">
+                  <span class "content">
+                    SW
+                  </span>
+                </div>
+              </figure>
+
               <header class="main-title" main-title>
                 Suricatos Wedding
               </header>
@@ -86,7 +94,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </app-toolbar>
 
           </template>
-
 
           <template is="dom-if" if="[[_isDesktop]]" restamp="true">
 
@@ -103,17 +110,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <app-toolbar class="nav-toolbar" sticky>
 
-              <nav class="tabs" bottom-item sticky>
+              <nav class="tabs tabs-left">
 
-                <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation">
+                <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
                   <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
                   <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
                   <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
+                </iron-selector>
+
+              </nav>
+              <figure class="logo">
+                <div class="circle">
+                  <span class"content">
+                    SW
+                  </span>
+                </div>
+              </figure>
+              <nav class="tabs tabs-right">
+                <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
+                  <a name="needs" href="[[rootPath]]needs">Necesito...</a>
                   <a name="place" href="[[rootPath]]place">Lugar</a>
                   <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
                 </iron-selector>
 
               </nav>
+
 
             </app-toolbar>
           </template>
@@ -122,10 +143,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </app-header>
 
         <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="404" role="main">
-          <suri-welcome name="welcome"></suri-welcome>
+          <suri-welcome name="welcome" id="welcome"></suri-welcome>
           <suri-agenda name="agenda"></suri-agenda>
           <suri-roadmap name="roadmap"></suri-roadmap>
           <suri-404 name="404"></suri-404>
+          <suri-needs name="needs"></suri-needs>
           <suri-place name="place"></suri-place>
           <suri-attendance name="attendance"></suri-attendance>
         </iron-pages>
