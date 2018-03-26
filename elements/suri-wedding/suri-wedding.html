@@ -73,13 +73,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header class="main-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title" threshold="400" on-threshold-triggered-changed="_showLogo">
 
+          <!-- mobile header -->
           <template is="dom-if" if="[[!_isDesktop]]" restamp="true">
 
             <app-toolbar class="main-toolbar" sticky>
               <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
               </paper-icon-button>
 
-              <figure class="logo" condensed-title>
+              <figure class="logo fadeInUp grow" condensed-title>
                 <div class="circle">
                   <span class "content">
                     SW
@@ -95,6 +96,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           </template>
 
+          <!-- desktop header -->
           <template is="dom-if" if="[[_isDesktop]]" restamp="true">
 
             <app-toolbar class="main-toolbar">
@@ -119,7 +121,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </iron-selector>
 
               </nav>
-              <figure class="logo">
+              <figure class="logo fadeInUp grow">
                 <div class="circle">
                   <span class"content">
                     SW
@@ -135,10 +137,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               </nav>
 
-
             </app-toolbar>
           </template>
-
 
         </app-header>
 
