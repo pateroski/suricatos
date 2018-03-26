@@ -1,6 +1,5 @@
 {
   'extends': 'stylelint-config-recommended',
-  'processors': ['stylelint-processor-html'],
   'rules': {
     'color-no-invalid-hex': true,
     'font-family-no-duplicate-names': true,
