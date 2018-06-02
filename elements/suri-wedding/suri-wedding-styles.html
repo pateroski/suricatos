@@ -22,7 +22,9 @@
         };
 
         --app-header-background-front-layer: {
-          background-image: url( '/images/suricatos_2.jpg' )
+          background-image: url( '/images/suricatos.png' );
+          background-repeat: no-repeat;
+          background-size: 100%
         };
       }
 
@@ -51,13 +53,12 @@
       }
 
       .drawer-list a.iron-selected {
-        color: rgb( 223, 89, 72 )
+        color: rgb( 128, 0, 0 )
       }
 
       /** Main header **/
       .main-header {
-        height: 400px;
-        position: relative
+        height: 300px
       }
 
       .main-toolbar {
@@ -78,10 +79,12 @@
       .main-title,
       .condensed-title {
         font-family: var( --suri-fontMountains );
-        font-size: 38px;
+        font-size: 30px;
         color: #000;
         text-align: center;
-        flex-basis: 100%
+        align-self: self-start;
+        padding: 16px 40px 0 0;
+        flex-basis: 50%
       }
 
       .condensed-title {
@@ -118,7 +121,7 @@
       @keyframes fadeInUp {
         from {
           opacity: 0;
-          transform: translate3d( 0, 100%, 0 )
+          transform: translate3d( 0, 30%, 0 )
         }
 
         to {
@@ -156,7 +159,7 @@
       @media (min-width: 768px) {
         /** Main header **/
         .main-header {
-          height: 500px
+          height: 525px
         }
 
         .drawer-toggle {
@@ -164,9 +167,11 @@
         }
 
         .main-title {
-          font-size: 80px;
+          font-size: 40px;
           color: #000;
-          text-align: center
+          flex-basis: 100%;
+          padding: 3% 5% 0;
+          text-align: left
         }
 
         /** Main toolbar **/
@@ -229,7 +234,23 @@
         }
 
         .tabs-list a.iron-selected {
-          color: #df5948
+          color: rgba( 128, 0, 0, .7 )
+        }
+      }
+
+      @media (min-width: 992px) {
+        .main-header {
+          height: 680px
+        }
+
+        .main-title {
+          font-size: 60px
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .main-header {
+          height: 820px
         }
       }
 

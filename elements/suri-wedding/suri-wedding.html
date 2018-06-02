@@ -71,76 +71,83 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
 
-        <app-header class="main-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title" threshold="400" on-threshold-triggered-changed="_showLogo">
+        <!-- <app-header class="main-header mobile-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title" threshold="790" on-threshold-triggered-changed="_showLogo"> -->
 
           <!-- mobile header -->
           <template is="dom-if" if="[[!_isDesktop]]" restamp="true">
 
-            <app-toolbar class="main-toolbar" sticky>
-              <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
-              </paper-icon-button>
+            <app-header class="main-header mobile-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title"
+              threshold="300" on-threshold-triggered-changed="_showLogo">
 
-              <figure class="logo fadeInUp grow" condensed-title>
-                <div class="circle">
-                  <span class "content">
-                    SW
-                  </span>
-                </div>
-              </figure>
+              <app-toolbar class="main-toolbar" sticky>
+                <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
+                </paper-icon-button>
 
-              <header class="main-title" main-title>
-                Suricatos Wedding
-              </header>
+                <figure class="logo fadeInUp grow" condensed-title>
+                  <div class="circle">
+                    <span class "content">
+                      SW
+                    </span>
+                  </div>
+                </figure>
 
-            </app-toolbar>
+                <header class="main-title" main-title>
+                  Suricatos Wedding
+                </header>
+
+              </app-toolbar>
+            </app-header>
 
           </template>
 
           <!-- desktop header -->
           <template is="dom-if" if="[[_isDesktop]]" restamp="true">
 
-            <app-toolbar class="main-toolbar">
+            <app-header class="main-header desktop-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background"
+              threshold="600" on-threshold-triggered-changed="_showLogo">
 
-              <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
-              </paper-icon-button>
+              <app-toolbar class="main-toolbar">
 
-              <header class="main-title" main-title>
-                Suricatos Wedding
-              </header>
+                <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
+                </paper-icon-button>
 
-            </app-toolbar>
+                <header class="main-title">
+                  Suricatos Wedding
+                </header>
 
-            <app-toolbar class="nav-toolbar" sticky>
+              </app-toolbar>
 
-              <nav class="tabs tabs-left">
+              <app-toolbar class="nav-toolbar" sticky>
 
-                <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
-                  <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
-                  <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
-                  <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
-                </iron-selector>
+                <nav class="tabs tabs-left">
 
-              </nav>
-              <figure class="logo fadeInUp grow">
-                <div class="circle">
-                  <span class"content">
-                    SW
-                  </span>
-                </div>
-              </figure>
-              <nav class="tabs tabs-right">
-                <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
-                  <a name="needs" href="[[rootPath]]needs">Necesito...</a>
-                  <a name="place" href="[[rootPath]]place">Lugar</a>
-                  <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
-                </iron-selector>
+                  <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
+                    <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
+                    <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
+                    <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
+                  </iron-selector>
 
-              </nav>
+                </nav>
+                <figure class="logo fadeInUp grow">
+                  <div class="circle">
+                    <span class"content">
+                      SW
+                    </span>
+                  </div>
+                </figure>
+                <nav class="tabs tabs-right">
+                  <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
+                    <a name="needs" href="[[rootPath]]needs">Necesito...</a>
+                    <a name="place" href="[[rootPath]]place">Lugar</a>
+                    <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
+                  </iron-selector>
 
-            </app-toolbar>
+                </nav>
+
+              </app-toolbar>
+            </app-header>
           </template>
 
-        </app-header>
 
         <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="404" role="main">
           <suri-welcome name="welcome" id="welcome"></suri-welcome>
@@ -151,6 +158,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <suri-place name="place"></suri-place>
           <suri-attendance name="attendance"></suri-attendance>
         </iron-pages>
+
+        <footer>
+
+        </footer>
 
       </app-header-layout>
     </app-drawer-layout>
