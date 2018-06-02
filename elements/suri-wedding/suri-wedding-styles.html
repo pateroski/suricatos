@@ -185,9 +185,25 @@
 
       .main-footer__event {
         font-family: var( --suri-fontMountains );
-        justify-content: flex-end;
-        padding-right: 20px;
         font-size: 20px
+      }
+
+      .main-footer__event-couple {
+        flex-basis: 55%;
+        text-align: right
+      }
+
+      .main-footer__event-couple iron-icon {
+        width: 28px;
+        height: 28px
+      }
+
+      .main-footer__event-authors {
+        font-family: var( --suri-fontMountains );
+        padding-right: 20px;
+        flex-basis: 45%;
+        text-align: right;
+        font-size: 18px
       }
 
       /**
@@ -277,6 +293,15 @@
         /** main footer **/
         .main-footer__description {
           font-size: 15px
+        }
+
+        .main-footer__event-authors {
+          font-size: 22px
+        }
+
+        .main-footer__event-couple iron-icon {
+          width: 40px;
+          height: 40px
         }
       }
 
