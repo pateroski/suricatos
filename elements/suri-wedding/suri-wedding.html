@@ -25,9 +25,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="../elements/suri-welcome/suri-welcome.html">
 <link rel="lazy-import" href="../elements/suri-agenda/suri-agenda.html">
 <link rel="lazy-import" href="../elements/suri-roadmap/suri-roadmap.html">
-<link rel="lazy-import" href="../elements/suri-404/suri-404.html">
 <link rel="lazy-import" href="../elements/suri-attendance/suri-attendance.html">
-<link rel="lazy-import" href="../elements/suri-needs/suri-needs.html">
+<link rel="lazy-import" href="../elements/suri-404/suri-404.html">
 <link rel="import" href="../../styles/my-theme.html">
 <link rel="import" href="suri-wedding-styles.html">
 
@@ -59,8 +58,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
             <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
             <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
-            <a name="needs" href="[[rootPath]]needs">Necesito...</a>
-            <a name="place" href="[[rootPath]]place">Lugar</a>
             <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
           </iron-selector>
 
@@ -71,9 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
 
-        <!-- <app-header class="main-header mobile-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title" threshold="790" on-threshold-triggered-changed="_showLogo"> -->
-
-          <!-- mobile header -->
+        <!-- mobile header -->
           <template is="dom-if" if="[[!_isDesktop]]" restamp="true">
 
             <app-header class="main-header mobile-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title"
@@ -124,7 +119,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
                     <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
                     <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
-                    <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
                   </iron-selector>
 
                 </nav>
@@ -137,8 +131,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </figure>
                 <nav class="tabs tabs-right">
                   <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
-                    <a name="needs" href="[[rootPath]]needs">Necesito...</a>
-                    <a name="place" href="[[rootPath]]place">Lugar</a>
+                    <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
                     <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
                   </iron-selector>
 
@@ -153,13 +146,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <suri-welcome name="welcome" id="welcome"></suri-welcome>
           <suri-agenda name="agenda"></suri-agenda>
           <suri-roadmap name="roadmap"></suri-roadmap>
-          <suri-404 name="404"></suri-404>
-          <suri-needs name="needs"></suri-needs>
-          <suri-place name="place"></suri-place>
           <suri-attendance name="attendance"></suri-attendance>
+          <suri-404 name="404"></suri-404>
         </iron-pages>
 
-        <footer>
+        <footer class="main-footer">
+          <ul>
+            <li class="main-footer__description">
+              <cite>
+                 "Las personas no aparecen cuando eliges, sino cuando estás preparado para recibirlas. Ahora nosotros estamos preparados para dar un paso más."
+              </cite>
+            </li>
+            <li class="main-footer__event">
+              Suricatos, 2018
+            </li>
+          </ul>
 
         </footer>
 
