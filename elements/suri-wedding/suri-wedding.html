@@ -32,7 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="suri-wedding">
   <template>
-    <style include="suri-wedding-styles">
+    <style include="suri-wedding-styles suri-animations">
     </style>
 
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
@@ -86,7 +86,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </div>
                 </figure>
 
-                <header class="main-title" main-title>
+                <header class="main-title flicker-in-1" main-title>
                   Suricatos Wedding
                 </header>
 
@@ -106,7 +106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
                 </paper-icon-button>
 
-                <header class="main-title">
+                <header class="main-title flicker-in-1">
                   Suricatos Wedding
                 </header>
 
@@ -157,12 +157,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                  "Las personas no aparecen cuando eliges, sino cuando estás preparado para recibirlas. Ahora nosotros estamos preparados para dar un paso más."
               </cite>
             </li>
-            <li class="main-footer__event">
-              <div class="main-footer__event-couple">
-                <iron-icon icon="icomoon:groom"></iron-icon>
-                <iron-icon icon="icomoon:bride"></iron-icon>
+            <li class="main-footer__couple">
+              <div>
+                <iron-icon class="couple-icon" icon="icomoon:groom"></iron-icon>
+                <iron-icon class="couple-icon" icon="icomoon:bride"></iron-icon>
               </div>
-              <span class="main-footer__event-authors">Suricatos, 2018</span>
+            </li>
+            <li class="main-footer__authors">
+              <span>Suricatos, 2018</span>
             </li>
           </ul>
 
