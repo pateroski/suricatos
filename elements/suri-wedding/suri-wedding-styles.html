@@ -35,26 +35,24 @@
       }
 
       .drawer-title {
-        font-family: var( --suri-fontMountains );
+        font-family: var( --suri-lillyMae );
         text-align: center;
-        text-decoration: underline;
-        font-size: 35px;
+        font-size: 50px;
         width: 100%
       }
 
       .drawer-list a {
-        font-family: var( --suri-fontMountains );
-        font-size: 20px;
+        font-family: var( --suri-taleOfHawk );
+        font-size: 26px;
         display: block;
         padding: 10px 16px;
-        color: var( --suri-color-primary-dark );
+        color: var( --suri-color-primary );
         text-decoration: none;
         outline: none
       }
 
       .drawer-list a.iron-selected {
-        color: var( --suri-color-primary-lighter );
-        text-decoration: underline
+        color: var( --suri-color-primary-lighter )
       }
 
       /** Main header **/
@@ -73,14 +71,14 @@
         align-self: flex-start;
         --paper-icon-button-ink-color: #fff;
         --paper-icon-button: {
-          color: var( --suri-color-primary-dark )
+          color: var( --suri-color-primary )
         }
       }
 
       .main-title,
       .condensed-title {
-        font-family: var( --suri-fontMountains );
-        font-size: 30px;
+        font-family: var( --suri-lillyMae );
+        font-size: 40px;
         color: var( --suri-color-primary );
         text-align: center;
         align-self: self-start;
@@ -90,10 +88,6 @@
 
       .condensed-title {
         font-size: 28px
-      }
-
-      .flicker-in-1 {
-        animation: flicker-in-1 3s linear
       }
 
       .nav-toolbar {
@@ -151,7 +145,6 @@
       }
 
       .main-footer ul li {
-        /* flex-basis: 50%; */
         display: flex;
         align-items: center
       }
@@ -162,12 +155,8 @@
         justify-content: center;
         flex-grow: 1;
         text-align: center;
-        font-weight: 300
-      }
-
-      .main-footer__event {
-        font-family: var( --suri-fontMountains );
-        font-size: 20px
+        font-weight: 300;
+        padding: 0 40px
       }
 
       .main-footer__couple {
@@ -176,16 +165,20 @@
       }
 
       .couple-icon {
-        width: 28px;
-        height: 28px
+        width: 35px;
+        height: 35px
+      }
+
+      .couple-her {
+        color: var( --suri-color-primary )
       }
 
       .main-footer__authors {
-        font-family: var( --suri-fontMountains );
+        font-family: var( --suri-lillyMae );
         padding-right: 20px;
         justify-content: flex-end;
         text-align: right;
-        font-size: 18px
+        font-size: 30px
       }
 
       /**
@@ -202,7 +195,7 @@
         }
 
         .main-title {
-          font-size: 40px;
+          font-size: 60px;
           flex-basis: 100%;
           padding: 3% 5% 0;
           text-align: left
@@ -255,35 +248,35 @@
         }
 
         .tabs-list a {
-          font-family: var( --suri-fontMountains );
+          font-family: var( --suri-taleOfHawk );
           text-decoration: none;
-          font-size: 24px
+          font-size: 30px
         }
 
         .tabs-list a:hover,
         .tabs-list a:visited,
         .tabs-list a:focus,
         .tab-list a:active {
-          color: var( --suri-color-primary-dark )
+          color: var( --suri-color-primary )
         }
 
         .tabs-list a.iron-selected {
-          color: var( --suri-color-primary-lighter );
-          border-bottom: 1px solid var( --suri-color-primary-lighter )
+          color: var( --suri-color-primary-lighter )
         }
 
         /** main footer **/
         .main-footer__description {
-          font-size: 15px
+          font-size: 15px;
+          padding: 0 80px
         }
 
         .main-footer__authors {
-          font-size: 22px
+          font-size: 35px
         }
 
         .couple-icon {
-          width: 40px;
-          height: 40px
+          width: 45px;
+          height: 45px
         }
       }
 
@@ -293,13 +286,17 @@
         }
 
         .main-title {
-          font-size: 60px
+          font-size: 70px
         }
       }
 
       @media (min-width: 1200px) {
         .main-header {
           height: 820px
+        }
+
+        .main-title {
+          font-size: 80px
         }
       }
 
