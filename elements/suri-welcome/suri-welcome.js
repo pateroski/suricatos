@@ -6,7 +6,141 @@
 
     static get properties() {
       return {
-
+        images: {
+          type: Array,
+          value: () => {
+            return [
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image1.jpeg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image2.jpeg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image3.jpeg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image4.jpeg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image5.jpeg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image6.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image7.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image8.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image9.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image10.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image11.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image12.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image13.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image14.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image15.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image16.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image17.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image18.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image19.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image20.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image21.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image22.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image23.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image24.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image25.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image26.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image27.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image28.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image29.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image30.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image31.jpg'
+              },
+              {
+                mobile: '',
+                desktop: '../../images/carousel/image32.jpg'
+              },
+            ];
+          }
+        }
       };
     }
 
@@ -28,6 +162,14 @@
         this.$.seconds.innerText = Math.floor((distance % (minute)) / second);
 
       }, second);
+    }
+
+    _moveBefore() {
+      this.$.slider.movePrev();
+    }
+
+    _moveNext() {
+      this.$.slider.moveNext();
     }
 
     ready() {

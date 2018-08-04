@@ -7,7 +7,13 @@
         padding: 10px
       }
 
-      .countdown {
+      article {
+        margin: 0 auto;
+        max-width: 1200px
+      }
+
+      /** Reverse counter **/
+      .suri-welcome__countdown {
         color: #333;
         text-align: center;
         font-family: var( --suri-lillyMae )
@@ -36,7 +42,45 @@
         font-size: 1.5rem
       }
 
+      /** Photo slider **/
+      .suri-welcome__slider {
+        position: relative
+      }
+
+      .nav-button {
+        color: var( --suri-color-primary );
+        --paper-icon-button-ink-color: var( --suri-color-primary-lighter );
+        position: absolute;
+        z-index: 1
+      }
+
+      .nav-before {
+        left: 1%;
+        top: 50%
+      }
+
+      .nav-next {
+        right: 1%;
+        top: 50%
+      }
+
+      .photo-slider {
+        --paper-slide-height: 265px
+      }
+
+      .photo-slide {
+        overflow-y: hidden
+      }
+
+      .photo-image {
+        width: 100%;
+        height: 100%;
+        background-color: #eeeeee66;
+        overflow: hidden
+      }
+
       @media (min-width: 768px) {
+        /** Reverse counter **/
         .digit {
           padding: 1em
         }
@@ -47,6 +91,16 @@
 
         .placeholder {
           font-size: 2.5rem
+        }
+
+        /** Photo slider **/
+        .nav-button  {
+          width: 60px;
+          height: 60px
+        }
+
+        .photo-slider {
+          --paper-slide-height: 750px
         }
       }
 
