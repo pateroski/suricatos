@@ -6,6 +6,50 @@
         display: block;
         padding: 10px
       }
+
+      .countdown {
+        color: #333;
+        text-align: center;
+        font-family: var( --suri-lillyMae )
+      }
+
+      .digits {
+        padding: 0;
+        margin: 0;
+        list-style-type: none
+      }
+
+      .digit {
+        display: inline-block;
+        padding: .5em
+      }
+
+      .number {
+        color: var( --suri-color-primary );
+        display: block;
+        font-size: 2.5em
+      }
+
+      .placeholder {
+        color: var( --suri-color-primary-lighter );
+        display: block;
+        font-size: 1.5rem
+      }
+
+      @media (min-width: 768px) {
+        .digit {
+          padding: 1em
+        }
+
+        .number {
+          font-size: 4.5em
+        }
+
+        .placeholder {
+          font-size: 2.5rem
+        }
+      }
+
     </style>
   </template>
 
