@@ -12,7 +12,7 @@
             return [
               {
                 mobile: '',
-                desktop: '../../images/carousel/image1.jpeg'
+                desktop: '../../images/carousel/image1.jpg'
               },
               {
                 mobile: '',
@@ -100,7 +100,7 @@
               },
               {
                 mobile: '',
-                desktop: '../../images/carousel/image23.jpg'
+                desktop: '../../images/carousel/image23.jpeg'
               },
               {
                 mobile: '',
