@@ -11,7 +11,9 @@
     "iron-selector": "PolymerElements/iron-selector#^2.0.0",
     "paper-icon-button": "PolymerElements/paper-icon-button#^2.0.0",
     "polymer": "Polymer/polymer#^2.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
+    "l2t-paper-slider": "Link2Twenty/l2t-paper-slider#^2.0.4",
+    "plastic-image": "1.0.14"
   },
   "resolutions": {
     "polymer": "^2.0.0"
