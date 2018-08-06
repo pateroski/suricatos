@@ -4,12 +4,21 @@
     <style>
       :host {
         display: block;
-        padding: 10px
+        padding: 100px 20px 60px
       }
 
       article {
-        margin: 0 auto;
+        margin: 60px auto;
         max-width: 1200px
+      }
+
+      .article-title {
+        color: var( --suri-color-primary );
+        font-family: var( --suri-lillyMae );
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 0;
+        text-align: center
       }
 
       /** Reverse counter **/
@@ -56,12 +65,12 @@
 
       .nav-before {
         left: 1%;
-        top: 50%
+        top: calc( 50% - 16px )
       }
 
       .nav-next {
         right: 1%;
-        top: 50%
+        top: calc( 50% - 16px )
       }
 
       .photo-slider {
@@ -80,6 +89,15 @@
       }
 
       @media (min-width: 768px) {
+        :host {
+          display: block;
+          padding: 80px 40px
+        }
+
+        .article-title {
+          font-size: 3rem
+        }
+
         /** Reverse counter **/
         .digit {
           padding: 1em
@@ -100,7 +118,7 @@
         }
 
         .photo-slider {
-          --paper-slide-height: 750px
+          --paper-slide-height: 520px
         }
       }
 

@@ -21,7 +21,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles suri-welcome-styles">
     </style>
 
+    <article>
+      <h3 class="article-title">¿Cómo es que hemos llegado hasta aquí?</h3>
+      <div class="card">
+        <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
+        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+      </div>
+    </article>
+
+    <article>
+      <h3 class="article-title">Suricatos por el mundo</h3>
+      <div class="suri-welcome__slider card">
+        <paper-icon-button
+          icon="my-icons:navigate-before"
+          class="nav-button nav-before"
+          on-tap="_moveBefore">
+        </paper-icon-button>
+
+        <l2t-paper-slider
+          id="slider"
+          class="photo-slider"
+          hide-nav
+          auto-progress
+          slide-duration="10"
+          sensitivity="high">
+          <template is="dom-repeat" items="[[images]]"
+            as="image">
+            <paper-slide class="photo-slide">
+              <plastic-image
+                preload
+                lazy-load
+                fade
+                sizing="contain"
+                srcset$="[[image.desktop]]"
+                class="photo-image">
+              </plastic-image>
+            </paper-slide>
+          </template>
+        </l2t-paper-slider>
+
+        <paper-icon-button
+          icon="my-icons:navigate-next"
+          class="nav-button nav-next"
+          on-tap="_moveNext">
+        </paper-icon-button>
+      </div>
+    </article>
+
     <article class="suri-welcome__countdown">
+
+      <h3 class="article-title">Nos vemos en...</h3>
       <ul class="digits">
         <li class="digit">
           <span id="days" class="number"></span>
@@ -41,54 +90,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </li>
       </ul>
     </article>
-
-    <article class="card">
-      <div class="circle">1</div>
-      <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-    </article>
-
-    <article class="suri-welcome__slider">
-
-      <paper-icon-button
-        icon="my-icons:navigate-before"
-        class="nav-button nav-before"
-        on-tap="_moveBefore">
-      </paper-icon-button>
-
-      <l2t-paper-slider
-        id="slider"
-        class="photo-slider"
-        hide-nav
-        auto-progress
-        slide-duration="20"
-        sensitivity="high">
-        <template is="dom-repeat" items="[[images]]"
-          as="image">
-          <paper-slide class="photo-slide">
-            <plastic-image
-              preload
-              lazy-load
-              fade
-              sizing="contain"
-              srcset$="[[image.desktop]]"
-              class="photo-image">
-            </plastic-image>
-          </paper-slide>
-        </template>
-      </l2t-paper-slider>
-
-      <paper-icon-button
-        icon="my-icons:navigate-next"
-        class="nav-button nav-next"
-        on-tap="_moveNext">
-      </paper-icon-button>
-    </article>
-
-
-
-
   </template>
 
   <script src='suri-welcome.js'></script>
