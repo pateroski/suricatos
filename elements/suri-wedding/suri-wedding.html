@@ -72,7 +72,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <template is="dom-if" if="[[!_isDesktop]]" restamp="true">
 
             <app-header class="main-header mobile-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title"
-              threshold="300" on-threshold-triggered-changed="_showLogo">
+              threshold="200" on-threshold-triggered-changed="_showLogo">
 
               <app-toolbar class="main-toolbar" sticky>
                 <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
@@ -97,7 +97,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <template is="dom-if" if="[[_isDesktop]]" restamp="true">
 
             <app-header class="main-header desktop-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background"
-              threshold="600" on-threshold-triggered-changed="_showLogo">
+              threshold="400" on-threshold-triggered-changed="_showLogo">
 
               <app-toolbar class="main-toolbar">
 
