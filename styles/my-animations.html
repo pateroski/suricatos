@@ -33,6 +33,54 @@
           transform: scale( 1 )
         }
       }
+
+      @keyframes suri-bounce-1 {
+        0% {
+          opacity: 0;
+          transform: scale( .5 )
+        }
+
+        60% {
+          opacity: 1;
+          transform: scale( 1.2 )
+        }
+
+        100% {
+          transform: scale( 1 )
+        }
+      }
+
+      @keyframes suri-bounce-2 {
+        0% {
+          opacity: 0;
+          transform: translateX( -100px )
+        }
+
+        60% {
+          opacity: 1;
+          transform: translateX( 20px )
+        }
+
+        100% {
+          transform: translateX( 0 )
+        }
+      }
+
+      @keyframes suri-bounce-2-inverse {
+        0% {
+          opacity: 0;
+          transform: translateX( 100px )
+        }
+
+        60% {
+          opacity: 1;
+          transform: translateX( -20px )
+        }
+
+        100% {
+          transform: translateX( 0 )
+        }
+      }
     </style>
   </template>
 </dom-module>

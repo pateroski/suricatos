@@ -1,0 +1,129 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../styles/shared-styles.html">
+<link rel="import" href="../../styles/my-theme.html">
+<link rel="import" href="suri-timeline-styles.html">
+
+<dom-module id="suri-timeline">
+  <template>
+    <style include="shared-styles suri-animations suri-timeline-styles">
+    </style>
+
+    <section id="timeLine" class="suri-timeline">
+      <div class="suri-timeline__container">
+        <div class="suri-timeline__block js-suri-block">
+          <div class="suri-timeline__img suri-timeline__img--picture js-suri-icon">
+            <iron-icon icon="icomoon:start"></iron-icon>
+          </div>
+          <!-- suri-timeline__img -->
+
+          <div class="suri-timeline__content js-suri-content">
+            <h2>Title of section 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat
+              iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+            <img src="../../images/logo_principal.png" alt="">
+            <span class="suri-timeline__date">Jan 14</span>
+          </div>
+          <!-- suri-timeline__content -->
+        </div>
+        <!-- suri-timeline__block -->
+
+        <div class="suri-timeline__block js-suri-block">
+          <div class="suri-timeline__img suri-timeline__img--movie js-suri-icon">
+            <img src="img/suri-icon-movie.svg" alt="Movie">
+          </div>
+          <!-- suri-timeline__img -->
+
+          <div class="suri-timeline__content js-suri-content">
+            <h2>Title of section 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat
+              iure tempora laudantium ipsa ad debitis unde?</p>
+            <a href="#0" class="suri-timeline__read-more">Read more</a>
+            <span class="suri-timeline__date">Jan 18</span>
+          </div>
+          <!-- suri-timeline__content -->
+        </div>
+        <!-- suri-timeline__block -->
+
+        <div class="suri-timeline__block js-suri-block">
+          <div class="suri-timeline__img suri-timeline__img--picture js-suri-icon">
+            <img src="img/suri-icon-picture.svg" alt="Picture">
+          </div>
+          <!-- suri-timeline__img -->
+
+          <div class="suri-timeline__content js-suri-content">
+            <h2>Title of section 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores
+              voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae
+              rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus
+              quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem
+              voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+            <a href="#0" class="suri-timeline__read-more">Read more</a>
+            <span class="suri-timeline__date">Jan 24</span>
+          </div>
+          <!-- suri-timeline__content -->
+        </div>
+        <!-- suri-timeline__block -->
+
+        <div class="suri-timeline__block js-suri-block">
+          <div class="suri-timeline__img suri-timeline__img--location js-suri-icon">
+            <img src="img/suri-icon-location.svg" alt="Location">
+          </div>
+          <!-- suri-timeline__img -->
+
+          <div class="suri-timeline__content js-suri-content">
+            <h2>Title of section 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat
+              iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+            <a href="#0" class="suri-timeline__read-more">Read more</a>
+            <span class="suri-timeline__date">Feb 14</span>
+          </div>
+          <!-- suri-timeline__content -->
+        </div>
+        <!-- suri-timeline__block -->
+
+        <div class="suri-timeline__block js-suri-block">
+          <div class="suri-timeline__img suri-timeline__img--location js-suri-icon">
+            <img src="img/suri-icon-location.svg" alt="Location">
+          </div>
+          <!-- suri-timeline__img -->
+
+          <div class="suri-timeline__content js-suri-content">
+            <h2>Title of section 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+            <a href="#0" class="suri-timeline__read-more">Read more</a>
+            <span class="suri-timeline__date">Feb 18</span>
+          </div>
+          <!-- suri-timeline__content -->
+        </div>
+        <!-- suri-timeline__block -->
+
+        <div class="suri-timeline__block js-suri-block">
+          <div class="suri-timeline__img suri-timeline__img--movie js-suri-icon">
+            <img src="img/suri-icon-movie.svg" alt="Movie">
+          </div>
+          <!-- suri-timeline__img -->
+
+          <div class="suri-timeline__content js-suri-content">
+            <h2>Final Section</h2>
+            <p>This is the content of the last section</p>
+            <span class="suri-timeline__date">Feb 26</span>
+          </div>
+          <!-- suri-timeline__content -->
+        </div>
+        <!-- suri-timeline__block -->
+      </div>
+    </section>
+  </template>
+
+  <script src='suri-timeline.js'></script>
+</dom-module>
