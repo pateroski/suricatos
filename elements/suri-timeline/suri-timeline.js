@@ -12,20 +12,103 @@
 
     static get properties() {
       return {
-        _verticalTimeLine: {
-          type: Object
+
+        /**
+         * {
+         *  title: 'titleOfSection'
+         *  content: 'textOrHTML'
+         *  image: 'imgSrc'
+         *  time: 'time or Date'
+         *  icon: {
+         *    name: 'iconName'
+         *    color: 'backgroundColor'
+         *  }
+         * }
+         */
+        moments: {
+          type: Array,
+          value: () => {
+            return [
+              {
+                title: 'Esto es una fiesta',
+                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
+                icon: {
+                  name: 'icomoon:start',
+                  color: 'primary'
+                },
+                image: 'logo_principal.png',
+                time: '12:12'
+              },
+              {
+                title: 'Esto es una fiesta',
+                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
+                icon: {
+                  name: 'icomoon:start',
+                  color: 'primary'
+                },
+                image: 'logo_principal.png',
+                time: '12:12'
+              },
+              {
+                title: 'Esto es una fiesta',
+                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
+                icon: {
+                  name: 'icomoon:start',
+                  color: 'primary'
+                },
+                image: 'logo_principal.png',
+                time: '12:12'
+              },
+              {
+                title: 'Esto es una fiesta',
+                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
+                icon: {
+                  name: 'icomoon:start',
+                  color: 'primary'
+                },
+                image: 'logo_principal.png',
+                time: '12:12'
+              },
+              {
+                title: 'Esto es una fiesta',
+                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
+                icon: {
+                  name: 'icomoon:start',
+                  color: 'primary'
+                },
+                image: 'logo_principal.png',
+                time: '12:12'
+              },
+              {
+                title: 'Esto es una fiesta',
+                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
+                icon: {
+                  name: 'icomoon:start',
+                  color: 'primary'
+                },
+                image: 'logo_principal.png',
+                time: '12:12'
+              },
+            ];
+          }
         },
         _blocks: {
           type: Array,
-          computed: '_computeBlocks(_verticalTimeLine)'
+          value: () => {
+            return [];
+          }
         },
         _icons: {
           type: Array,
-          computed: '_computeIcons(_verticalTimeLine)'
+          value: () => {
+            return [];
+          }
         },
         _contents: {
           type: Array,
-          computed: '_computeContents(_verticalTimeLine)'
+          value: () => {
+            return [];
+          }
         },
         _offset: {
           type: Number,
@@ -38,16 +121,14 @@
       };
     }
 
-    _computeBlocks(timeline) {
-      return timeline.getElementsByClassName('js-suri-block');
+    _listenDomChange(ev) {
+      this._populateElementsInPage();
     }
 
-    _computeIcons(timeline) {
-      return timeline.getElementsByClassName('js-suri-icon');
-    }
-
-    _computeContents(timeline) {
-      return timeline.getElementsByClassName('js-suri-content');
+    _populateElementsInPage() {
+      this.set('_blocks', this.shadowRoot.querySelectorAll('.js-suri-block'));
+      this.set('_icons', this.shadowRoot.querySelectorAll('.js-suri-icon'));
+      this.set('_contents', this.shadowRoot.querySelectorAll('.js-suri-content'));
     }
 
     _shouldHideBlocks(blocks, images, contents) {
@@ -87,8 +168,9 @@
     }
 
     ready() {
+      this.addEventListener('dom-change', this._listenDomChange);
       super.ready();
-      this._verticalTimeLine = this.$.timeLine;
+
 
       // show timeline blocks on scrolling
       window.addEventListener('scroll', () => {

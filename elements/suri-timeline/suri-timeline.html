@@ -20,103 +20,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <section id="timeLine" class="suri-timeline">
       <div class="suri-timeline__container">
-        <div class="suri-timeline__block js-suri-block">
-          <div class="suri-timeline__icon suri-timeline__icon--primary js-suri-icon">
-            <iron-icon icon="icomoon:start"></iron-icon>
-          </div>
-          <!-- suri-timeline__icon -->
 
-          <div class="suri-timeline__content js-suri-content">
-            <h2>Title of section 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat
-              iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-            <img src="../../images/logo_principal.png" alt="">
-            <span class="suri-timeline__date">Jan 14</span>
-          </div>
-          <!-- suri-timeline__content -->
-        </div>
-        <!-- suri-timeline__block -->
+        <dom-repeat items="[[moments]]" as="moment">
+          <template>
+            <div class="suri-timeline__block js-suri-block">
+              <div class$="suri-timeline__icon suri-timeline__icon--[[moment.icon.color]] js-suri-icon">
+                <iron-icon icon$="[[moment.icon.name]]"></iron-icon>
+              </div>
+              <!-- suri-timeline__icon -->
 
-        <div class="suri-timeline__block js-suri-block">
-          <div class="suri-timeline__icon suri-timeline__icon--movie js-suri-icon">
-            <img src="img/suri-icon-movie.svg" alt="Movie">
-          </div>
-          <!-- suri-timeline__icon -->
+              <div class="suri-timeline__content js-suri-content">
+                <h2>[[moment.title]]</h2>
+                <p inner-h-t-m-l="[[moment.content]]"></p>
+                <img src$="../../images/[[moment.image]]" alt="">
+                <span class="suri-timeline__date">[[moment.time]]</span>
+              </div>
+              <!-- suri-timeline__content -->
+            </div>
+            <!-- suri-timeline__block -->
+          </template>
+        </dom-repeat>
 
-          <div class="suri-timeline__content js-suri-content">
-            <h2>Title of section 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat
-              iure tempora laudantium ipsa ad debitis unde?</p>
-            <span class="suri-timeline__date">Jan 18</span>
-          </div>
-          <!-- suri-timeline__content -->
-        </div>
-        <!-- suri-timeline__block -->
-
-        <div class="suri-timeline__block js-suri-block">
-          <div class="suri-timeline__icon suri-timeline__icon--picture js-suri-icon">
-            <img src="img/suri-icon-picture.svg" alt="Picture">
-          </div>
-          <!-- suri-timeline__icon -->
-
-          <div class="suri-timeline__content js-suri-content">
-            <h2>Title of section 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores
-              voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae
-              rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus
-              quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem
-              voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-            <span class="suri-timeline__date">Jan 24</span>
-          </div>
-          <!-- suri-timeline__content -->
-        </div>
-        <!-- suri-timeline__block -->
-
-        <div class="suri-timeline__block js-suri-block">
-          <div class="suri-timeline__icon suri-timeline__icon--location js-suri-icon">
-            <img src="img/suri-icon-location.svg" alt="Location">
-          </div>
-          <!-- suri-timeline__icon -->
-
-          <div class="suri-timeline__content js-suri-content">
-            <h2>Title of section 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat
-              iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-            <span class="suri-timeline__date">Feb 14</span>
-          </div>
-          <!-- suri-timeline__content -->
-        </div>
-        <!-- suri-timeline__block -->
-
-        <div class="suri-timeline__block js-suri-block">
-          <div class="suri-timeline__icon suri-timeline__icon--location js-suri-icon">
-            <img src="img/suri-icon-location.svg" alt="Location">
-          </div>
-          <!-- suri-timeline__icon -->
-
-          <div class="suri-timeline__content js-suri-content">
-            <h2>Title of section 5</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-            <span class="suri-timeline__date">Feb 18</span>
-          </div>
-          <!-- suri-timeline__content -->
-        </div>
-        <!-- suri-timeline__block -->
-
-        <div class="suri-timeline__block js-suri-block">
-          <div class="suri-timeline__icon suri-timeline__icon--movie js-suri-icon">
-            <img src="img/suri-icon-movie.svg" alt="Movie">
-          </div>
-          <!-- suri-timeline__icon -->
-
-          <div class="suri-timeline__content js-suri-content">
-            <h2>Final Section</h2>
-            <p>This is the content of the last section</p>
-            <span class="suri-timeline__date">Feb 26</span>
-          </div>
-          <!-- suri-timeline__content -->
-        </div>
-        <!-- suri-timeline__block -->
       </div>
     </section>
   </template>
