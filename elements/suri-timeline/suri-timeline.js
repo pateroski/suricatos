@@ -121,10 +121,6 @@
       };
     }
 
-    _listenDomChange(ev) {
-      this._populateElementsInPage();
-    }
-
     _populateElementsInPage() {
       this.set('_blocks', this.shadowRoot.querySelectorAll('.js-suri-block'));
       this.set('_icons', this.shadowRoot.querySelectorAll('.js-suri-icon'));
@@ -168,7 +164,7 @@
     }
 
     ready() {
-      this.addEventListener('dom-change', this._listenDomChange);
+      this.addEventListener('dom-change', this._populateElementsInPage);
       super.ready();
 
 
