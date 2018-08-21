@@ -4,7 +4,177 @@
     <style>
       :host {
         display: block;
-        padding: 10px 20px
+        padding: 100px 20px 60px
+      }
+
+      article {
+        margin: 60px auto;
+        max-width: 1200px
+      }
+
+      .article-title,
+      .article-description,
+      .article-suggestion {
+        color: var( --suri-color-primary );
+        font-weight: 300;
+        margin: 0;
+        text-align: center
+      }
+
+      .article-title {
+        font-family: var( --suri-lillyMae );
+        font-size: 3rem
+      }
+
+      .article-description {
+        font-family: var( --suri-fontLato );
+        font-size: 1.25rem
+      }
+
+      .article-suggestion {
+        font-family: var( --suri-fontLato );
+        font-size: 1.75rem
+      }
+
+      .container {
+        margin: 0 auto;
+        position: relative;
+        width: 250px;
+        height: 250px
+      }
+
+      .ghost {
+        width: 50%;
+        height: 53%;
+        left: 25%;
+        top: 10%;
+        position: absolute;
+        border-radius: 50% 50% 0 0;
+        background: #ea7294;
+        border: 1px solid #d7456f;
+        border-bottom: none;
+        animation: suri-float 2s ease-out infinite
+      }
+
+      .ghost-copy {
+        width: 50%;
+        height: 53%;
+        left: 25%;
+        top: 10%;
+        position: absolute;
+        border-radius: 50% 50% 0 0;
+        background: #ea7294;
+        border: 1px solid #d7456f;
+        border-bottom: none;
+        animation: suri-float 2s ease-out infinite;
+        z-index: 0
+      }
+
+      .face {
+        position: absolute;
+        width: 100%;
+        height: 60%;
+        top: 20%
+      }
+
+      .eye,
+      .eye-right {
+        position: absolute;
+        background: #ffffff;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        top: 40%
+      }
+
+      .eye {
+        left: 25%
+      }
+
+      .eye-right {
+        right: 25%
+      }
+
+      .mouth {
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        width: 10px;
+        height: 10px;
+        border: 3px solid;
+        border-radius: 50%;
+        border-color: transparent #ffffff #ffffff transparent;
+        transform: rotate( 45deg )
+      }
+
+      .one,
+      .two,
+      .three,
+      .four {
+        position: absolute;
+        background: #ea7294;
+        top: 85%;
+        width: 25%;
+        height: 23%;
+        border: 1px solid #d7456f;
+        z-index: 0
+      }
+
+      .one {
+        border-radius: 0 0 100% 30%;
+        left: -1px
+      }
+
+      .two {
+        left: 23%;
+        border-radius: 0 0 50% 50%
+      }
+
+      .three {
+        left: 50%;
+        border-radius: 0 0 50% 50%
+      }
+
+      .four {
+        left: 74.5%;
+        border-radius: 0 0 30% 100%
+      }
+
+      .shadow {
+        position: absolute;
+        width: 30%;
+        height: 7%;
+        background: #d7456f;
+        left: 35%;
+        top: 80%;
+        border-radius: 50%;
+        animation: suri-scale 2s infinite
+      }
+
+      .back-to-home:hover,
+      .back-to-home:visited,
+      .back-to-home:focus,
+      .back-to-home:active {
+        color: var( --suri-color-primary )
+      }
+
+      @media only screen and (min-width: 768px) {
+        .article-title {
+          font-size: 4rem
+        }
+
+        .article-description {
+          font-size: 1.5rem
+        }
+
+        .article-suggestion {
+          font-size: 2rem
+        }
+
+        .container {
+          width: 300px;
+          height: 300px
+        }
       }
     </style>
   </template>

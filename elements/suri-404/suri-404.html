@@ -9,14 +9,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../styles/my-theme.html">
 <link rel="import" href="suri-404-styles.html">
 
 <dom-module id="suri-404">
   <template>
-    <style include="suri-404-styles">
+    <style include="suri-404-styles suri-animations">
     </style>
 
-    Oops you hit a 404. <a href="[[rootPath]]">Head back to home.</a>
+    <article>
+      <h3 class="article-title">¡Booh un 404!</h3>
+      <p class="article-description">
+        Parece que no hay nada por aquí...
+      </p>
+      <div class="container">
+        <div class="ghost-copy">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <div class="four"></div>
+        </div>
+        <div class="ghost">
+          <div class="face">
+            <div class="eye"></div>
+            <div class="eye-right"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+      <p class="article-suggestion">
+        Si te parece, podemos volver a <a class="back-to-home" href="[[rootPath]]">casa</a>
+      </p>
+    </article>
+
+
   </template>
 
   <script src='suri-404.js'></script>
