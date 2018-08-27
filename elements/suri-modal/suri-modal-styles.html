@@ -6,6 +6,184 @@
         display: block;
         padding: 10px
       }
+
+      /**
+      * If you use flex, you need to specify this rule for hidden attribute
+      */
+      article[hidden],
+      section[hidden],
+      div[hidden],
+      ul[hidden] {
+        display: none
+      }
+
+      .opened {
+        opacity: .7
+      }
+
+      .middle {
+        display: block
+      }
+
+      .modal {
+        padding: 0 !important;
+        margin: 0 !important;
+        font-family: var( --suri-taleOfHawk );
+        font-size: 1rem
+      }
+
+      .modal__wraper {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center
+      }
+
+      .modal__header {
+        color: #121212;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 17px;
+        align-items: center
+      }
+
+      .modal__header--basic {
+        background: #ffffff;
+        color: #666;
+        justify-content: flex-end
+      }
+
+      /*** basic modal middle ************/
+
+      .modal__middle--description {
+        font-size: 1rem;
+        text-align: center
+      }
+
+      .modal__middle--description p {
+        margin: 0
+      }
+
+      /*** global modal middle ************/
+
+      .modal__middle {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 0 16px;
+        text-align: center
+      }
+
+      /*** global modal footer ************/
+
+      .modal__footer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center
+      }
+
+      /** .main-footer wrapper html insertion point **/
+      .main-footer__wrapper {
+        width: 100%
+      }
+
+      /** basic **/
+      .modal-buttons__middle-draft-exit {
+        position: absolute;
+        bottom: 50px
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0
+        }
+
+        to {
+          opacity: 1
+        }
+      }
+
+      @keyframes fadeInUpBig {
+        from {
+          opacity: 0;
+          transform: translate3d( 0, 2000px, 0 )
+        }
+
+        to {
+          opacity: 1;
+          transform: none
+        }
+      }
+
+      @media (max-width: 991px) {
+        /** The overlay should be hidden too **/
+        iron-overlay-backdrop {
+          display: none
+        }
+
+        paper-dialog {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          transition: opacity .2s;
+          padding: 0;
+          margin: 0;
+          overflow-y: auto
+        }
+
+        .animated {
+          animation-duration: .5s;
+          animation-fill-mode: forwards;
+          animation-name: fadeInUpBig;
+          animation-timing-function: ease-in-out
+        }
+
+        .modal__middle--image {
+          height: 100px
+        }
+
+        .modal__middle--title {
+          font-size: 1.625rem;
+          line-height: 1.75rem;
+          margin: 40px 0 30px;
+          text-align: center
+        }
+      }
+
+      @media (min-width: 992px) {
+        paper-dialog {
+          display: block;
+          width: 1032px
+        }
+
+        iron-overlay-backdrop.opened {
+          display: initial
+        }
+
+        .modal--basic {
+          min-height: 648px;
+          width: 100%
+        }
+
+        .animated {
+          animation-duration: .3s;
+          animation-fill-mode: forwards;
+          animation-name: fadeIn;
+          animation-timing-function: ease-in
+        }
+
+        .modal__middle--title {
+          max-width: 555.58px;
+          font-size: 1.75rem;
+          line-height: 1.875rem;
+          margin: 40px 0 20px
+        }
+
+        .modal__middle--image {
+          margin-top: 40px
+        }
+      }
     </style>
   </template>
 

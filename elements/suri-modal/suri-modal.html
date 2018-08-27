@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../styles/shared-styles.html">
 <link rel="import" href="suri-modal-styles.html">
 
@@ -17,48 +19,74 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles suri-modal-styles">
     </style>
 
-    <div class="card">
-      <div class="circle">6</div>
-      <h1>View Six</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax
-        ei, ad pri animal labores suscipiantur.</p>
-    </div>
-    <div class="card">
-      <div class="circle">6</div>
-      <h1>View Six</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax
-        ei, ad pri animal labores suscipiantur.</p>
-    </div>
-    <div class="card">
-      <div class="circle">6</div>
-      <h1>View Six</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax
-        ei, ad pri animal labores suscipiantur.</p>
-    </div>
-    <div class="card">
-      <div class="circle">6</div>
-      <h1>View Six</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax
-        ei, ad pri animal labores suscipiantur.</p>
-    </div>
-    <div class="card">
-      <div class="circle">6</div>
-      <h1>View Six</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax
-        ei, ad pri animal labores suscipiantur.</p>
-    </div>
-    <div class="card">
-      <div class="circle">6</div>
-      <h1>View Six</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax
-        ei, ad pri animal labores suscipiantur.</p>
-    </div>
+    <paper-dialog id="dialog" class="middle animated" modal on-iron-overlay-closed="cancelDialog">
+
+      <article class="modal modal--basic">
+        <!-- global modal -->
+        <section class="modal__wraper">
+
+          <!-- global header modal -->
+          <header class="modal__header modal__header--basic">
+              <paper-button noink on-tap="exitDialog">
+
+                <iron-icon icon="my-icons:close">
+                </iron-icon>
+
+              </paper-button>
+          </header>
+
+          <div class="modal__middle">
+            <!-- main-content HTML injection in generic modals -->
+            <div class="main-content__wrapper">
+              <slot name="main-slot"></slot>
+            </div>
+
+            <img class="modal__middle--image" src$="[[image]]" alt="ok_request" hidden="[[!image]]">
+
+            <h3 class="modal__middle--title" hidden="[[!title]]">
+              [[t(title)]]
+            </h3>
+            <!-- For injecting HTML title in generic modals -->
+            <slot name="title"></slot>
+
+            <div class="modal__middle--description">
+              <p hidden="[[!description]]">
+                [[t(description)]]
+              </p>
+              <!-- For injecting HTML description in generic modals -->
+              <slot name="description"></slot>
+
+              <p hidden="[[!suggestion]]">
+                [[t(suggestion)]]
+              </p>
+              <!-- For injecting HTML suggestion in generic modals -->
+              <slot name="suggestion"></slot>
+            </div>
+
+          </div>
+          <!-- end middle content-->
+
+          <footer class="modal__footer">
+
+            <!-- main-content HTML injection in generic modals -->
+            <div class="main-footer__wrapper">
+              <slot name="main-footer"></slot>
+            </div>
+
+            <div class="modal-buttons__middle-draft-exit">
+
+                <paper-button on-tap="exitDialog">
+                  [[btnPrimaryText]]
+                </paper-button>
+
+            </div>
+
+          </footer>
+        </section>
+
+      </article>
+    </paper-dialog>
+
   </template>
 
   <script src='suri-modal.js'></script>
