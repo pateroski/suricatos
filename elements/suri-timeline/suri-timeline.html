@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
 <link rel="import" href="../../styles/my-theme.html">
 <link rel="import" href="suri-timeline-styles.html">
 
@@ -33,6 +35,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <p inner-h-t-m-l="[[moment.content]]"></p>
                 <img src$="../../images/[[moment.image]]" alt="">
                 <span class="suri-timeline__date">[[moment.time]]</span>
+                <paper-button
+                  noink
+                  raised
+                  class="suri-timeline__button"
+                  hidden$="[[moment.showButton]]"
+                  on-tap="_showModal">
+                  Patrocínalo
+                </paper-button>
               </div>
               <!-- suri-timeline__content -->
             </div>

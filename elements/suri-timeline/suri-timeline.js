@@ -37,7 +37,8 @@
                   color: 'primary'
                 },
                 image: 'logo_principal.png',
-                time: '12:12'
+                time: '12:12',
+                showButton: false
               },
               {
                 title: 'Esto es una fiesta',
@@ -47,7 +48,8 @@
                   color: 'primary'
                 },
                 image: 'logo_principal.png',
-                time: '12:12'
+                time: '12:12',
+                showButton: true
               },
               {
                 title: 'Esto es una fiesta',
@@ -57,7 +59,8 @@
                   color: 'primary'
                 },
                 image: 'logo_principal.png',
-                time: '12:12'
+                time: '12:12',
+                showButton: true
               },
               {
                 title: 'Esto es una fiesta',
@@ -67,7 +70,8 @@
                   color: 'primary'
                 },
                 image: 'logo_principal.png',
-                time: '12:12'
+                time: '12:12',
+                showButton: true
               },
               {
                 title: 'Esto es una fiesta',
@@ -77,7 +81,8 @@
                   color: 'primary'
                 },
                 image: 'logo_principal.png',
-                time: '12:12'
+                time: '12:12',
+                showButton: true
               },
               {
                 title: 'Esto es una fiesta',
@@ -87,7 +92,8 @@
                   color: 'primary'
                 },
                 image: 'logo_principal.png',
-                time: '12:12'
+                time: '12:12',
+                showButton: true
               },
             ];
           }
@@ -161,6 +167,10 @@
 
     checkTimelineScroll() {
       this.showBlocks();
+    }
+
+    _showModal() {
+      this.dispatchEvent(new CustomEvent('show-help-modal'));
     }
 
     ready() {

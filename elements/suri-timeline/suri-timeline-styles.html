@@ -141,6 +141,23 @@
         align-self: center
       }
 
+      .suri-timeline__button {
+        --paper-button-ink-color: var( --suri-color-primary-light );
+        font-family: var( --suri-taleOfHawk );
+        color: var( --suri-color-primary );
+        margin-top: 20px;
+        text-transform: none;
+        font-size: 1.2rem;
+        padding: .5rem;
+        width: 60%;
+        align-self: center
+      }
+
+      .suri-timeline__button:hover {
+        background-color: var( --suri-color-primary-lighter );
+        color: #ffffff
+      }
+
       .suri-timeline__date {
         font-family: var( --suri-lillyMae );
         font-size: 2rem;
@@ -220,6 +237,10 @@
           left: 138%;
           top: 6px;
           font-size: 3rem
+        }
+
+        .suri-timeline__button {
+          font-size: 1.5rem
         }
 
         .suri-timeline__block:nth-child(even) {
