@@ -4,6 +4,28 @@
 
     <style>
 
+      @keyframes fadeIn {
+        from {
+          opacity: 0
+        }
+
+        to {
+          opacity: 1
+        }
+      }
+
+      @keyframes fadeInUpBig {
+        from {
+          opacity: 0;
+          transform: translate3d( 0, 2000px, 0 )
+        }
+
+        to {
+          opacity: 1;
+          transform: none
+        }
+      }
+
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -99,6 +121,74 @@
       @keyframes suri-float {
         50% {
           transform: translateY( 15px )
+        }
+      }
+
+      @keyframes happy-look {
+        0% {
+          transform: translate( 0, 0 )
+        }
+
+        10% {
+          transform: translate( 10px, 0 )
+        }
+
+        20% {
+          transform: translate( 10px, 0 )
+        }
+
+        30% {
+          transform: translate( 0, 0 )
+        }
+
+        60% {
+          transform: translate( 0, 0 )
+        }
+
+        70% {
+          transform: translate( -10px, -15px )
+        }
+
+        80% {
+          transform: translate( -10px, -15px )
+        }
+
+        90% {
+          transform: translate( 0, 0 )
+        }
+      }
+
+      @keyframes happy-mouth {
+        0% {
+          height: 50px
+        }
+
+        10% {
+          height: 50px
+        }
+
+        20% {
+          height: 50px
+        }
+
+        30% {
+          height: 50px
+        }
+
+        60% {
+          height: 50px
+        }
+
+        70% {
+          height: 40px
+        }
+
+        80% {
+          height: 40px
+        }
+
+        90% {
+          height: 50px
         }
       }
     </style>

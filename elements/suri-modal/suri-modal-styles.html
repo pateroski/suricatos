@@ -3,8 +3,7 @@
   <template>
     <style>
       :host {
-        display: block;
-        padding: 10px
+        display: block
       }
 
       /**
@@ -42,8 +41,15 @@
         color: #121212;
         display: flex;
         flex-flow: row wrap;
-        padding: 17px;
+        padding: 17px 17px 0;
         align-items: center
+      }
+
+      .modal__header h3 {
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #666;
+        margin: 0
       }
 
       .modal__header--basic {
@@ -52,15 +58,15 @@
         justify-content: flex-end
       }
 
-      /*** basic modal middle ************/
-
-      .modal__middle--description {
-        font-size: 1rem;
-        text-align: center
+      .btn-exit {
+        margin: 0;
+        padding: 0;
+        min-width: 0;
+        color: var( --suri-color-primary )
       }
 
-      .modal__middle--description p {
-        margin: 0
+      .btn-exit:hover {
+        color: var( --suri-color-primary-lighter )
       }
 
       /*** global modal middle ************/
@@ -73,48 +79,127 @@
         text-align: center
       }
 
-      /*** global modal footer ************/
-
-      .modal__footer {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center
-      }
-
-      /** .main-footer wrapper html insertion point **/
-      .main-footer__wrapper {
+      /** .main-content wrapper html insertion point **/
+      .main-content__wrapper {
         width: 100%
       }
 
-      /** basic **/
-      .modal-buttons__middle-draft-exit {
+      .emoji {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        background: var( --suri-color-primary-lighter );
+        border-radius: 50%;
+        position: relative
+      }
+
+      .face {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        position: relative;
+        animation: happy-look 5s infinite
+      }
+
+      .eye {
+        width: 25px;
+        height: 25px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        top: 75px;
         position: absolute;
-        bottom: 50px
+        animation: blink 5s infinite;
+        animation-delay: 3.7s
       }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0
-        }
-
-        to {
-          opacity: 1
-        }
+      .left {
+        left: 45px
       }
 
-      @keyframes fadeInUpBig {
-        from {
-          opacity: 0;
-          transform: translate3d( 0, 2000px, 0 )
-        }
-
-        to {
-          opacity: 1;
-          transform: none
-        }
+      .right {
+        right: 45px
       }
 
-      @media (max-width: 991px) {
+      .mouth {
+        width: 100px;
+        height: 50px;
+        border-style: solid;
+        border-radius: 50%;
+        border-width: 8px;
+        border-color: transparent transparent #ffffff;
+        left: 68px;
+        top: 75px;
+        position: absolute;
+        animation: happy-mouth 5s infinite
+      }
+
+      /*** basic modal middle ************/
+      .modal__middle--title {
+        color: var( --suri-color-primary )
+      }
+
+      .modal__middle--description {
+        font-size: 1rem;
+        text-align: center
+      }
+
+      .description-items {
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        list-style-type: none
+      }
+
+      .description-item {
+        margin-top: 20px;
+        flex-basis: 30%;
+        display: flex;
+        flex-flow: column;
+        align-items: center
+      }
+
+      .description-item__image {
+        padding: 20px 0;
+        height: auto
+      }
+
+      .description-item__action {
+        font-family: var( --suri-lillyMae );
+        font-size: 1.5rem
+      }
+
+      /*** global modal footer ************/
+      .modal__footer {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 50px;
+        justify-content: center
+      }
+
+      .suri-modal__button {
+        --paper-button-ink-color: var( --suri-color-primary-light );
+        font-family: var( --suri-taleOfHawk );
+        color: var( --suri-color-primary );
+        text-transform: none;
+        font-size: 1.5rem;
+        padding: 1rem
+      }
+
+      .suri-modal__button:hover {
+        background-color: var( --suri-color-primary-lighter );
+        color: #ffffff
+      }
+
+      @media (max-width: 767px) {
         /** The overlay should be hidden too **/
         iron-overlay-backdrop {
           display: none
@@ -139,19 +224,15 @@
           animation-timing-function: ease-in-out
         }
 
-        .modal__middle--image {
-          height: 100px
-        }
-
         .modal__middle--title {
-          font-size: 1.625rem;
+          font-size: 2rem;
           line-height: 1.75rem;
           margin: 40px 0 30px;
           text-align: center
         }
       }
 
-      @media (min-width: 992px) {
+      @media (min-width: 768px) {
         paper-dialog {
           display: block;
           width: 1032px
@@ -175,13 +256,24 @@
 
         .modal__middle--title {
           max-width: 555.58px;
-          font-size: 1.75rem;
-          line-height: 1.875rem;
+          font-size: 2.75rem;
+          line-height: 2.625rem;
           margin: 40px 0 20px
         }
 
-        .modal__middle--image {
-          margin-top: 40px
+        .modal__middle--description p {
+          margin: 30px;
+          line-height: 1.8
+        }
+
+        .description-items {
+          flex-flow: row;
+          align-items: flex-end;
+          margin: 40px
+        }
+
+        .modal__footer {
+          margin: 20px
         }
       }
     </style>
