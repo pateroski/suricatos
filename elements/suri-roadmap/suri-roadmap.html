@@ -22,7 +22,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <suri-modal id="helpModal">
     </suri-modal>
 
-    <suri-timeline on-show-help-modal="_showHelpModal"></suri-timeline>
+    <suri-timeline
+      moments="[[moments]]"
+      on-show-help-modal="_showHelpModal">
+    </suri-timeline>
   </template>
 
   <script src='suri-roadmap.js'></script>

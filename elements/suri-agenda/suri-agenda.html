@@ -9,8 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../styles/shared-styles.html">
 <link rel="import" href="../suri-timeline/suri-timeline.html">
+<link rel="import" href="../../styles/shared-styles.html">
 <link rel="import" href="suri-agenda-styles.html">
 
 <dom-module id="suri-agenda">
@@ -18,7 +18,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles suri-agenda-styles">
     </style>
 
-    <suri-timeline></suri-timeline>
+    <article>
+      <h3 class="article-title">¿Ya es el día?</h3>
+      <div class="card">
+        <p class="align-left give-ma-colour give-ma-hype">
+          Pues ya estamos aquí:
+        </p>
+        <p>
+          Es el día <span class="give-ma-colour">13 de octubre</span>, te levantas en tu habitación de hotel, en tu apartamento o en tu casa y ahora tienes que prepararte para la boda de los suricatos.
+        </p>
+        <p>
+          <span class="give-ma-hype give-ma-bold">Empezamos bien</span>. Tomas tu desayuno, lo mismo tienes que ir a la peluquería, a maquillarte o lo mismo te quedas descansando un ratito más, o no, estás deseando de bajar a la plaza y tomarte una cerveza. O te toca cuidar de los niños que andan revoltosos y aquello es el desembarco de Normandía. En un rato ya estás maquead@, tú y los tuy@s.
+        </p>
+        <p>
+          Y vamos que nos vamos. En un rato, <span class="give-ma-hype give-ma-colour">empieza el show</span>.
+        </p>
+      </div>
+    </article>
+
+
+    <suri-timeline
+      moments="[[moments]]">
+    </suri-timeline>
   </template>
 
   <script src='suri-agenda.js'></script>

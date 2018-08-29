@@ -120,7 +120,7 @@
 
       .suri-timeline__content h2 {
         font-family: var( --suri-lillyMae );
-        text-transform: lowercase;
+        font-weight: 300;
         font-size: 2.5rem;
         color: var( --suri-color-primary );
         margin: 0
@@ -164,6 +164,34 @@
         color: var( --suri-color-primary );
         padding-top: 1rem;
         align-self: flex-end
+      }
+
+      .align-left {
+        text-align: left
+      }
+
+      .give-ma-colour,
+      p.give-ma-colour,
+      span.give-ma-colour {
+        color: var( --suri-color-primary )
+      }
+
+      .give-ma-bold,
+      p.give-ma-bold,
+      span.give-ma-bold {
+        font-weight: 700
+      }
+
+      .give-ma-hype,
+      p.give-ma-hype,
+      span.give-ma-hype {
+        font-size: 1.25rem
+      }
+
+      .leave-ma-margin,
+      p.leave-ma-margin,
+      span.leave-ma-margin {
+        margin: 0
       }
 
       @media only screen and (min-width: 768px) {
@@ -269,6 +297,12 @@
         /* inverse bounce effect on even content blocks */
         .suri-timeline__block:nth-child(even) .suri-timeline__content.suri-timeline__content--bounce-in {
           animation: suri-bounce-2-inverse .6s
+        }
+
+        .give-ma-hype,
+        p.give-ma-hype,
+        span.give-ma-hype  {
+          font-size: 1.75rem
         }
       }
 
