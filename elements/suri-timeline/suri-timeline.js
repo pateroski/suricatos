@@ -180,7 +180,6 @@
 
       // show timeline blocks on scrolling
       window.addEventListener('scroll', () => {
-        // debugger;
         if (!this._scrolling && this._blocks.length !== 0) {
           this.set('_scrolling', true);
           this.checkTimelineScroll();

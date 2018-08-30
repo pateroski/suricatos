@@ -2,6 +2,11 @@
 
   <template>
     <style>
+      :host {
+        display: block;
+        padding: 100px 20px 60px
+      }
+
       .article-description,
       .article-suggestion {
         color: var( --suri-color-primary );
@@ -148,6 +153,11 @@
       }
 
       @media only screen and (min-width: 768px) {
+        :host {
+          display: block;
+          padding: 80px 40px
+        }
+
         .article-description {
           font-size: 1.5rem
         }

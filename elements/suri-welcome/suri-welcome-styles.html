@@ -2,6 +2,11 @@
 
   <template>
     <style>
+      :host {
+        display: block;
+        padding: 100px 20px 60px
+      }
+
       /** Reverse counter **/
       .suri-welcome__countdown {
         color: #333;
@@ -70,6 +75,11 @@
       }
 
       @media (min-width: 768px) {
+        :host {
+          display: block;
+          padding: 80px 40px
+        }
+
         /** Reverse counter **/
         .digit {
           padding: 1em
