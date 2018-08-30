@@ -22,80 +22,14 @@
          *  icon: {
          *    name: 'iconName'
          *    color: 'backgroundColor'
-         *  }
+         *  },
+         *  showButton: false
          * }
          */
         moments: {
           type: Array,
           value: () => {
-            return [
-              {
-                title: 'Esto es una fiesta',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
-                icon: {
-                  name: 'icomoon:start',
-                  color: 'primary'
-                },
-                image: 'logo_principal.png',
-                time: '12:12',
-                showButton: false
-              },
-              {
-                title: 'Esto es una fiesta',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
-                icon: {
-                  name: 'icomoon:start',
-                  color: 'primary'
-                },
-                image: 'logo_principal.png',
-                time: '12:12',
-                showButton: true
-              },
-              {
-                title: 'Esto es una fiesta',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
-                icon: {
-                  name: 'icomoon:start',
-                  color: 'primary'
-                },
-                image: 'logo_principal.png',
-                time: '12:12',
-                showButton: true
-              },
-              {
-                title: 'Esto es una fiesta',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
-                icon: {
-                  name: 'icomoon:start',
-                  color: 'primary'
-                },
-                image: 'logo_principal.png',
-                time: '12:12',
-                showButton: true
-              },
-              {
-                title: 'Esto es una fiesta',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
-                icon: {
-                  name: 'icomoon:start',
-                  color: 'primary'
-                },
-                image: 'logo_principal.png',
-                time: '12:12',
-                showButton: true
-              },
-              {
-                title: 'Esto es una fiesta',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placea',
-                icon: {
-                  name: 'icomoon:start',
-                  color: 'primary'
-                },
-                image: 'logo_principal.png',
-                time: '12:12',
-                showButton: true
-              },
-            ];
+            return [];
           }
         },
         _blocks: {
@@ -176,7 +110,6 @@
     ready() {
       this.addEventListener('dom-change', this._populateElementsInPage);
       super.ready();
-
 
       // show timeline blocks on scrolling
       window.addEventListener('scroll', () => {
