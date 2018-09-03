@@ -2,4 +2,4 @@
 
 Página personal para la boda.
 
-Built with ❤️  in polymer.
+Built with <3 in polymer.
