@@ -61,6 +61,10 @@
       };
     }
 
+    _isImgSrcPresent(imageSrc) {
+      return imageSrc === '' || imageSrc === undefined || imageSrc === null;
+    }
+
     _populateElementsInPage() {
       this.set('_blocks', this.shadowRoot.querySelectorAll('.js-suri-block'));
       this.set('_icons', this.shadowRoot.querySelectorAll('.js-suri-icon'));

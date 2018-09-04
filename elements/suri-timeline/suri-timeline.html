@@ -33,7 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="suri-timeline__content js-suri-content">
                 <h2>[[moment.title]]</h2>
                 <p inner-h-t-m-l="[[moment.content]]"></p>
-                <img src$="../../images/[[moment.image]]" alt="">
+                <img src$="../../images/[[moment.image]]" hidden$="[[_isImgSrcPresent(moment.image)]]" alt="">
                 <span class="suri-timeline__date">[[moment.time]]</span>
                 <paper-button
                   noink
