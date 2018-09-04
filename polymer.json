@@ -15,7 +15,8 @@
   ],
   "extraDependencies": [
     "manifest.json",
-    "bower_components/webcomponentsjs/*.js"
+    "bower_components/webcomponentsjs/*.js",
+    "bower_components/plastic-image/intersection-observer.js"
   ],
   "lint": {
     "rules": ["polymer-2"]
