@@ -1,5 +1,5 @@
 # Suricatos Wedding
 
-Página personal para la boda.
+Personal web for my wedding day.
 
-Built with <3 in polymer.
+Built with <3 for all  my people in Polymer.

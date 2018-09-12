@@ -1,6 +1,6 @@
 {
   "name": "Suricatos Wedding",
-  "short_name": "Suricatos Wedding",
+  "short_name": "SW",
   "description": "Static page for Suricatos weeding",
   "icons": [
     {
@@ -17,5 +17,5 @@
   "start_url": "/welcome",
   "display": "standalone",
   "theme_color": "#c92351",
-  "background_color": "eeeeee66"
+  "background_color": "#eeeeee66"
 }
