@@ -1,0 +1,58 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="../../styles/my-theme.html">
+<link rel="import" href="suri-timeline-styles.html">
+
+<dom-module id="suri-timeline">
+  <template>
+    <style include="suri-animations suri-timeline-styles">
+    </style>
+
+    <section id="timeLine" class="suri-timeline">
+      <div class="suri-timeline__container">
+
+        <dom-repeat items="[[moments]]" as="moment">
+          <template>
+            <div class="suri-timeline__block js-suri-block">
+              <div class$="suri-timeline__icon suri-timeline__icon--[[moment.icon.color]] js-suri-icon">
+                <iron-icon icon$="[[moment.icon.name]]"></iron-icon>
+              </div>
+              <!-- suri-timeline__icon -->
+
+              <div class="suri-timeline__content js-suri-content">
+                <h2>[[moment.title]]</h2>
+                <p inner-h-t-m-l="[[moment.content]]"></p>
+                <img src$="../../images/[[moment.image]]" hidden$="[[_isImgSrcPresent(moment.image)]]" alt="">
+                <span class="suri-timeline__date">[[moment.time]]</span>
+                <paper-button
+                  noink
+                  raised
+                  class="suri-timeline__button"
+                  hidden$="[[!moment.showButton]]"
+                  on-tap="_showModal">
+                  Patrocínalo
+                </paper-button>
+              </div>
+              <!-- suri-timeline__content -->
+            </div>
+            <!-- suri-timeline__block -->
+          </template>
+        </dom-repeat>
+
+      </div>
+    </section>
+  </template>
+
+  <script src='suri-timeline.js'></script>
+</dom-module>

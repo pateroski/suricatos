@@ -1,0 +1,196 @@
+<dom-module id="suri-animations">
+
+  <template>
+
+    <style>
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0
+        }
+
+        to {
+          opacity: 1
+        }
+      }
+
+      @keyframes fadeInUpBig {
+        from {
+          opacity: 0;
+          transform: translate3d( 0, 2000px, 0 )
+        }
+
+        to {
+          opacity: 1;
+          transform: none
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translate3d( 0, 30%, 0 )
+        }
+
+        to {
+          opacity: 1;
+          transform: none
+        }
+      }
+
+      @keyframes grow {
+        0% {
+          display: none;
+          opacity: 0
+        }
+
+        1% {
+          display: block;
+          opacity: 0;
+          transform: scale( 0 )
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale( 1 )
+        }
+      }
+
+      @keyframes suri-bounce-1 {
+        0% {
+          opacity: 0;
+          transform: scale( .5 )
+        }
+
+        60% {
+          opacity: 1;
+          transform: scale( 1.2 )
+        }
+
+        100% {
+          transform: scale( 1 )
+        }
+      }
+
+      @keyframes suri-bounce-2 {
+        0% {
+          opacity: 0;
+          transform: translateX( -100px )
+        }
+
+        60% {
+          opacity: 1;
+          transform: translateX( 20px )
+        }
+
+        100% {
+          transform: translateX( 0 )
+        }
+      }
+
+      @keyframes suri-bounce-2-inverse {
+        0% {
+          opacity: 0;
+          transform: translateX( 100px )
+        }
+
+        60% {
+          opacity: 1;
+          transform: translateX( -20px )
+        }
+
+        100% {
+          transform: translateX( 0 )
+        }
+      }
+
+      @keyframes suri-scale {
+        0% {
+          transform: scale( 1 )
+        }
+
+        50% {
+          transform: scale( 1.1 )
+        }
+
+        100% {
+          transform: scale( 1 )
+        }
+      }
+
+      @keyframes suri-float {
+        50% {
+          transform: translateY( 15px )
+        }
+      }
+
+      @keyframes happy-look {
+        0% {
+          transform: translate( 0, 0 )
+        }
+
+        10% {
+          transform: translate( 10px, 0 )
+        }
+
+        20% {
+          transform: translate( 10px, 0 )
+        }
+
+        30% {
+          transform: translate( 0, 0 )
+        }
+
+        60% {
+          transform: translate( 0, 0 )
+        }
+
+        70% {
+          transform: translate( -10px, -15px )
+        }
+
+        80% {
+          transform: translate( -10px, -15px )
+        }
+
+        90% {
+          transform: translate( 0, 0 )
+        }
+      }
+
+      @keyframes happy-mouth {
+        0% {
+          height: 50px
+        }
+
+        10% {
+          height: 50px
+        }
+
+        20% {
+          height: 50px
+        }
+
+        30% {
+          height: 50px
+        }
+
+        60% {
+          height: 50px
+        }
+
+        70% {
+          height: 40px
+        }
+
+        80% {
+          height: 40px
+        }
+
+        90% {
+          height: 50px
+        }
+      }
+    </style>
+  </template>
+</dom-module>

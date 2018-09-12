@@ -1,0 +1,97 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<!-- shared styles for all views -->
+<dom-module id="shared-styles">
+  <template>
+    <style>
+      .card {
+        margin: 24px;
+        padding: 20px;
+        color: #4f4f4f;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba( 0, 0, 0, .14 ), 0 1px 5px 0 rgba( 0, 0, 0, .12 ), 0 3px 1px -2px rgba( 0, 0, 0, .2 )
+      }
+
+      article {
+        margin: 60px auto;
+        max-width: 1200px
+      }
+
+      .article-title {
+        color: var( --suri-color-primary );
+        font-family: var( --suri-lillyMae );
+        font-size: 3rem;
+        font-weight: 300;
+        margin: 0;
+        text-align: center
+      }
+
+      p {
+        font-family: var( --suri-taleOfHawk );
+        font-size: 1.25rem;
+        text-align: center;
+        line-height: 1.8;
+        margin: 20px 0
+      }
+
+      .align-left {
+        text-align: left
+      }
+
+      .give-ma-colour {
+        color: var( --suri-color-primary )
+      }
+
+      .give-ma-bold {
+        font-weight: 700
+      }
+
+      .give-ma-hype {
+        font-size: 1.25rem
+      }
+
+      .link-ma-cool {
+        text-decoration: none;
+        color: var( --suri-color-primary-lighter )
+      }
+
+      .link-ma-cool:hover,
+      .link-ma-cool:visited,
+      .link-ma-cool:focus,
+      .link-ma-cool:active {
+        color: var( --suri-color-primary-lighter )
+      }
+
+      @media (min-width: 768px) {
+        .card {
+          padding: 40px 60px
+        }
+
+        .article-title {
+          font-size: 4rem
+        }
+
+        p {
+          font-size: 1.5rem;
+          line-height: 2.1;
+          margin: 30px 0
+        }
+
+        .give-ma-hype {
+          font-size: 1.75rem
+        }
+      }
+    </style>
+  </template>
+</dom-module>

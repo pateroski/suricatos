@@ -1,0 +1,32 @@
+{
+  "name": "weeding.suricatos.life",
+  "version": "0.1.0",
+  "description": "Portal sobre la boda de los Suricatos",
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-plugin-html": "^3.2.2",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended": "^1.0.0",
+    "stylelint-processor-html": "^1.0.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:pateroski/suricatos.git"
+  },
+  "scripts": {
+    "deps": "npm install && bower install",
+    "reset": "rm -rf components/ && bower cache clean && bower install",
+    "lint": "npm run lint:javascript && polymer lint",
+    "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
+    "test": "polymer test",
+    "test:integration": "polymer build # test that psk builds without error with the CLI",
+    "precommit": "lint-staged",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "elements/**/*.js": "eslint --ignore-path .gitignore",
+    "elements/**/*.html": "stylelint --ignorepath .gitignore"
+  }
+}

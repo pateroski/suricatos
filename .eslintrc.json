@@ -1,0 +1,239 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-eq-null": "error",
+    "no-eval": "error",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTernary": true
+      }
+    ],
+    "no-bitwise": "error",
+    "no-extend-native": "error",
+    "no-iterator": "off",
+    "no-use-before-define": "error",
+    "no-loop-func": "error",
+    "eqeqeq": "error",
+    "guard-for-in": "warn",
+    "block-scoped-var": "off",
+    "strict": "off",
+    "curly": [
+      "error",
+      "all"
+    ],
+    "complexity": [
+      "error",
+      11
+    ],
+    "no-cond-assign": [
+      "error",
+      "always"
+    ],
+    "no-caller": "error",
+    "no-irregular-whitespace": "error",
+    "no-new": "error",
+    "valid-typeof": "off",
+    "require-yield": "off",
+    "no-plusplus": "off",
+    "no-proto": "off",
+    "no-script-url": "off",
+    "no-shadow": "warn",
+    "no-new-func": "off",
+    "no-new-wrappers": "off",
+    "no-undef": "error",
+    "no-unused-vars": "off",
+    "no-invalid-this": "off",
+    "no-empty": "error",
+    "no-spaced-func": "error",
+    "no-with": "error",
+    "brace-style": "off",
+    "no-multi-str": "error",
+    "one-var": [
+      "error",
+      "never"
+    ],
+    "yoda": [
+      "error",
+      "never"
+    ],
+    "wrap-iife": [
+      "error",
+      "inside"
+    ],
+    "space-infix-ops": "error",
+    "dot-notation": "error",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "max-params": "off",
+    "max-statements": "off",
+    "space-in-parens": [
+      "error",
+      "never"
+    ],
+    "space-unary-ops": [
+      "error",
+      {
+        "words": false,
+        "nonwords": false
+      }
+    ],
+    "camelcase": [
+      "error",
+      {
+        "properties": "never"
+      }
+    ],
+    "new-cap": "off",
+    "lines-around-comment": "off",
+    "consistent-this": "off",
+    "array-bracket-spacing": [
+      "error",
+      "never"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "block-spacing": [
+      "error",
+      "always"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "comma-style": [
+      "error",
+      "last"
+    ],
+    "semi-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": true,
+        "objectsInObjects": true
+      }
+    ],
+    "max-depth": [
+      "off",
+      4
+    ],
+    "no-mixed-spaces-and-tabs": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "space-before-blocks": [
+      "error",
+      "always"
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2,
+        "maxEOF": 1
+      }
+    ],
+    "no-trailing-spaces": "error",
+    "valid-jsdoc": [
+      "error",
+      {
+        "requireReturn": false,
+        "prefer": {
+          "arg": "param",
+          "argument": "param",
+          "returns": "return"
+        },
+        "preferType": {
+          "Boolean": "boolean",
+          "Number": "number",
+          "String": "string",
+          "object": "Object",
+          "array": "Array"
+        }
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "plugins": [
+    "html"
+  ],
+  "globals": {
+    "__dirname": false,
+    "app": false,
+    "page": false,
+    "Polymer": false,
+    "process": false,
+    "require": false,
+    "suite": false,
+    "suiteSetup": false,
+    "flush": false,
+    "expect": false,
+    "test": false,
+    "unwrap": false,
+    "WCT": false,
+    "wrap": false,
+    "suiteTeardown": false,
+    "setup": false,
+    "teardown": false,
+    "module": false
+  }
+}

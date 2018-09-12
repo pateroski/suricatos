@@ -1,0 +1,119 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../styles/my-theme.html">
+<link rel="import" href="../../styles/shared-styles.html">
+<link rel="import" href="suri-modal-styles.html">
+
+<dom-module id="suri-modal">
+  <template>
+    <style include="shared-styles suri-modal-styles suri-animations">
+    </style>
+
+    <paper-dialog id="dialog" class="middle animated" modal on-iron-overlay-closed="cancelDialog">
+
+      <article class="modal modal--basic">
+        <!-- modal -->
+        <section class="modal__wraper">
+
+          <!--header modal -->
+          <header class="modal__header modal__header--basic">
+              <paper-button noink class="btn-exit" on-tap="exitDialog">
+
+                <iron-icon icon="my-icons:close">
+                </iron-icon>
+
+              </paper-button>
+          </header>
+
+          <!-- middle content-->
+          <div class="modal__middle">
+            <div class="main-content__wrapper">
+              <div class="emoji">
+                <div class="face">
+                  <div class="eye left"></div>
+                  <div class="eye right"></div>
+                  <div class="mouth"></div>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="modal__middle--title">
+              Mira qué contentos nos has puesto
+            </h3>
+
+
+            <div class="modal__middle--description">
+              <p>
+                Si te apetece hacer una pequeña aportación, te lo agradaceremos eternamente. <span class="give-ma-bold">¡Una cosa!</span>, recuerda añadir <span class="give-ma-colour">tu nombre</span> y el concepto del <span class="give-ma-colour">momento
+                que quieres patrocinar: </span>
+              </p>
+
+              <ul class="description-items">
+                <li class="description-item">
+                  <img
+                    class="description-item__image"
+                    src="../../images/modal/bizum.png"
+                    alt="bizum">
+                  <div class="description-item__action">
+                    <span class="give-ma-colour">(+34) 699 552 179</span>
+                  </div>
+                </li>
+                <li class="description-item">
+                  <img
+                    class="description-item__image"
+                    src="../../images/modal/twyp.png"
+                    alt="twyp">
+                  <div class="description-item__action">
+                    <span class="give-ma-colour">(+34) 627 697 711</span>
+                  </div>
+                </li>
+                <li class="description-item">
+                  <img
+                    class="description-item__image"
+                    src="../../images/modal/ing.png"
+                    alt="ing">
+                  <div class="description-item__action">
+                    <span class="give-ma-colour">ES94 1465 0100 94 1731680506</span>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <footer class="modal__footer">
+
+            <div class="modal-buttons">
+
+                <paper-button
+                  noink
+                  raised
+                  class="suri-modal__button"
+                  on-tap="exitDialog">
+                  ¡Muchas gracias!
+                </paper-button>
+
+            </div>
+
+          </footer>
+        </section>
+
+      </article>
+    </paper-dialog>
+
+  </template>
+
+  <script src='suri-modal.js'></script>
+</dom-module>

@@ -1,0 +1,82 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../suri-timeline/suri-timeline.html">
+<link rel="import" href="../suri-modal/suri-modal.html">
+<link rel="import" href="../../styles/shared-styles.html">
+<link rel="import" href="suri-roadmap-styles.html">
+
+<dom-module id="suri-roadmap">
+  <template>
+    <style include="shared-styles suri-roadmap-styles">
+    </style>
+
+    <suri-modal id="helpModal">
+    </suri-modal>
+
+    <article>
+      <h3 class="article-title">Making of</h3>
+      <div class="card">
+        <p class="align-left give-ma-colour give-ma-hype">
+          Vaya, vaya…, pues va a ser verdad que nos vamos a ir de luna de miel.
+        </p>
+        <p>
+           Igual está bien que sepáis desde cuando empezó a gestarse esto.Allá por <span class="give-ma-colour">noviembre, diciembre de 2017</span>, todavía no teníamos nada cerrado completamente, pero os puedo garantizar que los sitios del viaje ya estaban cerrados.
+        </p>
+        <p class="give-ma-colour give-ma-hype">
+          ¿Y Cómo es que es así?
+        </p>
+        <p>
+          <span class="give-ma-hype give-ma-bold">La Suricata</span> tiene pericia para rato para tratar de buscar las mejores combinaciones y consultar en mil webs, mientras tú tratas de escribir
+          bien el nombre de a qué país quieres viajar.
+        </p>
+        <p>
+          Para cuando estás consultando los vuelos y el precio que tienen, ella ya tiene
+          amigos en el país de destino y posiblemente de toda la vida. <span class="give-ma-colour">Es así, imbatible. Sabe que el tiempo es dinero</span> y que en estos casos más aún.
+        </p>
+        <p>
+          En cuanto al <span class="give-ma-colour">destino</span>, pues lo teníamos más o menos claro. <span class="give-ma-colour">Primero era darle la vuelta al mundo</span> con un billete que nos permitiera recorrerlo. Tras averiguar que <span class="give-ma-colour">las combinaciones no eran muy acertadas</span> para las fechas y que los destinos no eran tan atractivos para una luna de miel, cayó sobre la mesa:
+        </p>
+        <ul class="suri-roadmap__talk">
+          <li>
+              “¿qué tal polinesia Francesa?”
+          </li>
+          <li>
+              “Pues mira, no es que me haya paseado yo por allí…”
+          </li>
+          <li>
+              “pero un mes, van a ser muchos días”, pensamos los dos...
+          </li>
+          <li>
+              “¿Y si vamos a Nueva Zelanda también?”
+          </li>
+          <li>
+              “Pues ya está, es que suena bien por donde lo mires”
+          </li>
+        </ul>
+        <p>
+           Y En ese orden, <a class="link-ma-cool" href="https://www.nationalgeographic.com.es/destinos/polinesia">Polinesia Francesa</a> y <a class="link-ma-cool" href="https://www.backpackerguide.nz/">Nueva Zelanda</a>. Una ilusión del carajo. Unas ganas de pillar esas playas y pasear con el coche por esos parajes que nos tiene recontentos. <span class="give-ma-colour">Muuu bonito</span>.
+        </p>
+      </div>
+    </article>
+
+    <article>
+      <h3 class="article-title">Show me the travel</h3>
+      <suri-timeline
+        moments="[[moments]]"
+        on-show-help-modal="_showHelpModal">
+      </suri-timeline>
+    </article>
+
+  </template>
+
+  <script src='suri-roadmap.js'></script>
+</dom-module>

@@ -1,0 +1,174 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-media-query/iron-media-query.html">
+
+<link rel="lazy-import" href="../suri-welcome/suri-welcome.html">
+<link rel="lazy-import" href="../suri-agenda/suri-agenda.html">
+<link rel="lazy-import" href="../suri-roadmap/suri-roadmap.html">
+<link rel="lazy-import" href="../suri-attendance/suri-attendance.html">
+<link rel="lazy-import" href="../suri-404/suri-404.html">
+<link rel="import" href="../../styles/my-theme.html">
+<link rel="import" href="suri-wedding-styles.html">
+
+<dom-module id="suri-wedding">
+  <template>
+    <style include="suri-wedding-styles suri-animations">
+    </style>
+
+    <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
+    </app-location>
+
+    <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}">
+    </app-route>
+
+    <iron-media-query query="min-width: 768px" query-matches="{{_isDesktop}}"></iron-media-query>
+
+    <app-drawer-layout fullbleed force-narrow>
+
+      <!-- Drawer content -->
+      <app-drawer id="drawer" slot="drawer">
+
+        <app-toolbar class="drawer-header">
+          <header class="drawer-title">
+            Menú
+          </header>
+        </app-toolbar>
+        <nav>
+          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation" selected="welcome">
+            <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
+            <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
+            <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
+            <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
+          </iron-selector>
+
+        </nav>
+
+      </app-drawer>
+
+      <!-- Main content -->
+      <app-header-layout>
+
+        <!-- mobile header -->
+          <template is="dom-if" if="[[!_isDesktop]]" restamp="true">
+
+            <app-header class="main-header mobile-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background resize-snapped-title"
+              threshold="200" on-threshold-triggered-changed="_showLogo">
+
+              <app-toolbar class="main-toolbar" sticky>
+                <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
+                </paper-icon-button>
+
+                <figure class="logo fadeInUp grow" condensed-title>
+                  <div class="circle">
+                    <img class="circle__logo" src="../../images/logo_principal.png" alt="Suricatos">
+                  </div>
+                </figure>
+
+                <header class="main-title" main-title>
+                  Suricatos Wedding
+                </header>
+
+              </app-toolbar>
+            </app-header>
+
+          </template>
+
+          <!-- desktop header -->
+          <template is="dom-if" if="[[_isDesktop]]" restamp="true">
+
+            <app-header class="main-header desktop-header" slot="header" fixed condenses effects="waterfall blend-background parallax-background"
+              threshold="400" on-threshold-triggered-changed="_showLogo">
+
+              <app-toolbar class="main-toolbar">
+
+                <paper-icon-button class="drawer-toggle" icon="my-icons:menu" drawer-toggle>
+                </paper-icon-button>
+
+                <header class="main-title">
+                  Suricatos Wedding
+                </header>
+
+              </app-toolbar>
+
+              <app-toolbar class="nav-toolbar" sticky>
+
+                <nav class="tabs tabs-left">
+
+                  <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
+                    <a name="welcome" href="[[rootPath]]welcome">Bienvenida</a>
+                    <a name="agenda" href="[[rootPath]]agenda">Agenda</a>
+                  </iron-selector>
+
+                </nav>
+                <figure class="logo fadeInUp grow">
+                  <div class="circle">
+                    <img class="circle__logo" src="../../images/logo_principal.png" alt="Suricatos">
+                  </div>
+                </figure>
+                <nav class="tabs tabs-right">
+                  <iron-selector selected="[[page]]" attr-for-selected="name" class="tabs-list" role="navigation" selected="welcome">
+                    <a name="roadmap" href="[[rootPath]]roadmap">Roadmap</a>
+                    <a name="attendance" href="[[rootPath]]attendance">Asistencia</a>
+                  </iron-selector>
+
+                </nav>
+
+              </app-toolbar>
+            </app-header>
+          </template>
+
+
+        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="404" role="main">
+          <suri-welcome name="welcome" id="welcome"></suri-welcome>
+          <suri-agenda name="agenda"></suri-agenda>
+          <suri-roadmap name="roadmap"></suri-roadmap>
+          <suri-attendance name="attendance"></suri-attendance>
+          <suri-404 name="404"></suri-404>
+        </iron-pages>
+
+        <footer class="main-footer">
+          <ul>
+            <li class="main-footer__description">
+              <blockquote>
+                 "Las personas no aparecen cuando eliges, sino cuando estás preparado para recibirlas. Ahora nosotros estamos preparados para dar un paso más."
+              </blockquote>
+            </li>
+            <li class="main-footer__couple">
+              <div>
+                <iron-icon class="couple-icon couple-her" icon="icomoon:bride"></iron-icon>
+                <iron-icon class="couple-icon couple-him" icon="icomoon:groom"></iron-icon>
+              </div>
+            </li>
+            <li class="main-footer__authors">
+              <span>Suricatos, 2018</span>
+            </li>
+          </ul>
+
+        </footer>
+
+      </app-header-layout>
+    </app-drawer-layout>
+  </template>
+
+  <script src="suri-wedding.js"></script>
+</dom-module>

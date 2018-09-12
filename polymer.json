@@ -1,0 +1,35 @@
+{
+  "entrypoint": "index.html",
+  "shell": "elements/suri-wedding/suri-wedding.html",
+  "fragments": [
+    "elements/suri-welcome/suri-welcome.html",
+    "elements/suri-agenda/suri-agenda.html",
+    "elements/suri-roadmap/suri-roadmap.html",
+    "elements/suri-404/suri-404.html",
+    "elements/suri-attendance/suri-attendance.html"
+  ],
+  "sources": [
+    "elements/**/*",
+    "images/**/*",
+    "styles/**/*"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/*.js",
+    "bower_components/plastic-image/intersection-observer.js"
+  ],
+  "lint": {
+    "rules": ["polymer-2"]
+  },
+  "builds": [
+    {
+      "preset": "es5-bundled"
+    },
+    {
+      "preset": "es6-bundled"
+    },
+    {
+      "preset": "es6-unbundled"
+    }
+  ]
+}

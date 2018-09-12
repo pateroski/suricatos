@@ -1,0 +1,350 @@
+<dom-module id="suri-timeline-styles">
+
+  <template>
+    <style>
+
+      .suri-timeline {
+        overflow: hidden;
+        margin: 2rem auto
+      }
+
+      .suri-timeline__container {
+        position: relative;
+        flex-basis: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem .25rem;
+        display: flex;
+        flex-flow: column nowrap
+      }
+
+      .suri-timeline__container::before {
+        /* this is the vertical line */
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 22px;
+        height: 100%;
+        width: 4px;
+        background: #d7e4ed
+      }
+
+      .suri-timeline__block {
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
+        margin: 2rem 0
+      }
+
+      .suri-timeline__block:first-child {
+        margin-top: 0
+      }
+
+      .suri-timeline__block:last-child {
+        margin-bottom: 0
+      }
+
+      .suri-timeline__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba( 0, 0, 0, .08 ), 0 3px 0 4px rgba( 0, 0, 0, .05 )
+      }
+
+      .suri-timeline__icon iron-icon {
+        display: block;
+        color: #ffffff;
+        width: 24px;
+        height: 24px
+      }
+
+      .suri-timeline__icon--primary {
+        background: var( --suri-color-primary, #c92351 )
+      }
+
+      .suri-timeline__icon--primary-dark {
+        background: var( --suri-color-primary-dark, #a30f39 )
+      }
+
+      .suri-timeline__icon--primary-darker {
+        background: var( --suri-color-primary-darker, #800025 )
+      }
+
+      .suri-timeline__icon--primary-light {
+        background: var( --suri-color-primary-light, #d7456f )
+      }
+
+      .suri-timeline__icon--primary-lighter {
+        background: var( --suri-color-primary-lighter, #ea7294 )
+      }
+
+      .suri-timeline__icon--secondary {
+        background: var( --suri-color-secondary, #b04261 )
+      }
+
+      .suri-timeline__icon--complementary-1 {
+        background: var( --suri-color-complementary-1, #23c96e )
+      }
+
+      .suri-timeline__icon--complementary-2 {
+        background: var( --suri-color-complementary-2, #a5c923 )
+      }
+
+      .suri-timeline__content {
+        flex-basis: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        position: relative;
+        margin-left: 52px;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba( 0, 0, 0, .14 ), 0 1px 5px 0 rgba( 0, 0, 0, .12 ), 0 3px 1px -2px rgba( 0, 0, 0, .2 )
+      }
+
+      .suri-timeline__content::before {
+        /* triangle next to content block */
+        content: '';
+        position: absolute;
+        top: 16px;
+        right: 100%;
+        height: 0;
+        width: 0;
+        border: 7px solid transparent;
+        border-right: 7px solid #ffffff
+      }
+
+      .suri-timeline__content h2 {
+        font-family: var( --suri-lillyMae );
+        font-weight: 300;
+        font-size: 2.5rem;
+        color: var( --suri-color-primary );
+        margin: 0
+      }
+
+      .suri-timeline__content p {
+        color: #4f4f4f;
+        font-family: var( --suri-taleOfHawk );
+        font-size: 1.25rem;
+        line-height: 1.8
+      }
+
+      .suri-timeline__content img {
+        max-width: 600px;
+        max-height: 400px;
+        width: 100%;
+        height: auto;
+        align-self: center
+      }
+
+      .suri-timeline__button {
+        --paper-button-ink-color: var( --suri-color-primary-light );
+        font-family: var( --suri-taleOfHawk );
+        color: var( --suri-color-primary );
+        margin-top: 20px;
+        text-transform: none;
+        font-size: 1.2rem;
+        padding: .5rem;
+        width: 60%;
+        align-self: center
+      }
+
+      .suri-timeline__button:hover {
+        background-color: var( --suri-color-primary-lighter );
+        color: #ffffff
+      }
+
+      .suri-timeline__date {
+        font-family: var( --suri-lillyMae );
+        font-size: 2rem;
+        color: var( --suri-color-primary );
+        padding-top: 1rem;
+        align-self: flex-end
+      }
+
+      .align-left {
+        text-align: left
+      }
+
+      .give-ma-colour,
+      p.give-ma-colour,
+      span.give-ma-colour {
+        color: var( --suri-color-primary )
+      }
+
+      .give-ma-bold,
+      p.give-ma-bold,
+      span.give-ma-bold {
+        font-weight: 700
+      }
+
+      .give-ma-hype,
+      p.give-ma-hype,
+      span.give-ma-hype {
+        font-size: 1.25rem
+      }
+
+      .leave-ma-margin,
+      p.leave-ma-margin,
+      span.leave-ma-margin {
+        margin-bottom: 0
+      }
+
+      .change-ma-font,
+      p.change-ma-font,
+      span.change-ma-font {
+        font-family: var( --suri-lillyMae )
+      }
+
+      .link-ma-cool {
+        text-decoration: none;
+        color: var( --suri-color-primary-lighter )
+      }
+
+      .link-ma-cool:hover,
+      .link-ma-cool:visited,
+      .link-ma-cool:focus,
+      .link-ma-cool:active {
+        color: var( --suri-color-primary-lighter )
+      }
+
+      @media only screen and (min-width: 768px) {
+        .suri-is-hidden {
+          visibility: hidden
+        }
+
+        .suri-timeline {
+          margin-top: 3rem;
+          margin-bottom: 3rem
+        }
+
+        .suri-timeline__container::before {
+          left: 50%;
+          margin-left: -2px
+        }
+
+        .suri-timeline__block {
+          margin: 4rem 0
+        }
+
+        .suri-timeline__icon {
+          width: 60px;
+          height: 60px;
+          left: 50%;
+          margin-left: -30px;
+
+          /* Force Hardware Acceleration */
+          transform: translateZ( 0 )
+        }
+
+        .suri-timeline__icon iron-icon {
+          width: 40px;
+          height: 40px
+        }
+
+        .suri-timeline__icon.suri-timeline__icon--bounce-in {
+          visibility: visible;
+          animation: suri-bounce-1 .6s
+        }
+
+        .suri-timeline__content {
+          margin-left: 0;
+          padding: 1.6rem;
+          flex-basis: 37%;
+
+          /* Force Hardware Acceleration */
+          transform: translateZ( 0 )
+        }
+
+        .suri-timeline__content::before {
+          top: 24px;
+          left: 100%;
+          border-color: transparent;
+          border-left-color: #ffffff
+        }
+
+        .suri-timeline__content h2 {
+          font-size: 3rem
+        }
+
+        .suri-timeline__content p {
+          font-size: 1.5rem;
+          line-height: 2.1
+        }
+
+        .suri-timeline__date {
+          position: absolute;
+          padding-top: 0;
+          width: 100%;
+          left: 138%;
+          top: 6px;
+          font-size: 3rem
+        }
+
+        .suri-timeline__button {
+          font-size: 1.5rem
+        }
+
+        .suri-timeline__block:nth-child(even) {
+          flex-direction: row-reverse
+        }
+
+        .suri-timeline__block:nth-child(even) .suri-timeline__content::before {
+          top: 24px;
+          left: auto;
+          right: 100%;
+          border-color: transparent;
+          border-right-color: #ffffff
+        }
+
+        .suri-timeline__block:nth-child(even) .suri-timeline__date {
+          left: auto;
+          right: 138%;
+          text-align: right
+        }
+
+        .suri-timeline__content.suri-timeline__content--bounce-in {
+          visibility: visible;
+          animation: suri-bounce-2 .6s
+        }
+
+        /* inverse bounce effect on even content blocks */
+        .suri-timeline__block:nth-child(even) .suri-timeline__content.suri-timeline__content--bounce-in {
+          animation: suri-bounce-2-inverse .6s
+        }
+
+        .give-ma-hype,
+        p.give-ma-hype,
+        span.give-ma-hype  {
+          font-size: 1.75rem
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        .suri-timeline__content {
+          flex-basis: 40%
+        }
+
+        .suri-timeline__date {
+          left: 130%
+        }
+
+        .suri-timeline__block:nth-child(even) .suri-timeline__date {
+          right: 130%
+        }
+      }
+
+      @media only screen and (min-width: 1200px) {
+        .suri-timeline__content {
+          flex-basis: 41%
+        }
+      }
+
+    </style>
+  </template>
+
+</dom-module>

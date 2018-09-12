@@ -1,0 +1,51 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../styles/my-theme.html">
+<link rel="import" href="../../styles/shared-styles.html">
+<link rel="import" href="suri-404-styles.html">
+
+<dom-module id="suri-404">
+  <template>
+    <style include="shared-styles suri-404-styles suri-animations">
+    </style>
+
+    <article>
+      <h3 class="article-title">¡Booh un 404!</h3>
+      <p class="article-description">
+        Parece que no hay nada por aquí...
+      </p>
+      <div class="container">
+        <div class="ghost-copy">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <div class="four"></div>
+        </div>
+        <div class="ghost">
+          <div class="face">
+            <div class="eye"></div>
+            <div class="eye-right"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+      <p class="article-suggestion">
+        Si te parece, podemos volver a <a class="back-to-home" href="[[rootPath]]">casa</a>
+      </p>
+    </article>
+
+
+  </template>
+
+  <script src='suri-404.js'></script>
+</dom-module>

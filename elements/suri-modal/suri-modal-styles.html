@@ -1,0 +1,282 @@
+<dom-module id="suri-modal-styles">
+
+  <template>
+    <style>
+      :host {
+        display: block
+      }
+
+      /**
+      * If you use flex, you need to specify this rule for hidden attribute
+      */
+      article[hidden],
+      section[hidden],
+      div[hidden],
+      ul[hidden] {
+        display: none
+      }
+
+      .opened {
+        opacity: .7
+      }
+
+      .middle {
+        display: block
+      }
+
+      .modal {
+        padding: 0 !important;
+        margin: 0 !important;
+        font-family: var( --suri-taleOfHawk );
+        font-size: 1rem
+      }
+
+      .modal__wraper {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center
+      }
+
+      .modal__header {
+        color: #121212;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 17px 17px 0;
+        align-items: center
+      }
+
+      .modal__header h3 {
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #666;
+        margin: 0
+      }
+
+      .modal__header--basic {
+        background: #ffffff;
+        color: #666;
+        justify-content: flex-end
+      }
+
+      .btn-exit {
+        margin: 0;
+        padding: 0;
+        min-width: 0;
+        color: var( --suri-color-primary )
+      }
+
+      .btn-exit:hover {
+        color: var( --suri-color-primary-lighter )
+      }
+
+      /*** global modal middle ************/
+
+      .modal__middle {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 0 16px;
+        text-align: center
+      }
+
+      /** .main-content wrapper html insertion point **/
+      .main-content__wrapper {
+        width: 100%
+      }
+
+      .emoji {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        background: var( --suri-color-primary-lighter );
+        border-radius: 50%;
+        position: relative
+      }
+
+      .face {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        position: relative;
+        animation: happy-look 5s infinite
+      }
+
+      .eye {
+        width: 25px;
+        height: 25px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        top: 75px;
+        position: absolute;
+        animation: blink 5s infinite;
+        animation-delay: 3.7s
+      }
+
+      .left {
+        left: 45px
+      }
+
+      .right {
+        right: 45px
+      }
+
+      .mouth {
+        width: 100px;
+        height: 50px;
+        border-style: solid;
+        border-radius: 50%;
+        border-width: 8px;
+        border-color: transparent transparent #ffffff;
+        left: 68px;
+        top: 75px;
+        position: absolute;
+        animation: happy-mouth 5s infinite
+      }
+
+      /*** basic modal middle ************/
+      .modal__middle--title {
+        color: var( --suri-color-primary )
+      }
+
+      .modal__middle--description {
+        font-size: 1rem;
+        text-align: center
+      }
+
+      .description-items {
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        list-style-type: none
+      }
+
+      .description-item {
+        margin-top: 20px;
+        flex-basis: 30%;
+        display: flex;
+        flex-flow: column;
+        align-items: center
+      }
+
+      .description-item__image {
+        padding: 20px 0;
+        height: auto
+      }
+
+      .description-item__action {
+        font-family: var( --suri-lillyMae );
+        font-size: 1.5rem
+      }
+
+      /*** global modal footer ************/
+      .modal__footer {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 50px;
+        justify-content: center
+      }
+
+      .suri-modal__button {
+        --paper-button-ink-color: var( --suri-color-primary-light );
+        font-family: var( --suri-taleOfHawk );
+        color: var( --suri-color-primary );
+        text-transform: none;
+        font-size: 1.5rem;
+        padding: 1rem
+      }
+
+      .suri-modal__button:hover {
+        background-color: var( --suri-color-primary-lighter );
+        color: #ffffff
+      }
+
+      @media (max-width: 767px) {
+        /** The overlay should be hidden too **/
+        iron-overlay-backdrop {
+          display: none
+        }
+
+        paper-dialog {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          transition: opacity .2s;
+          padding: 0;
+          margin: 0;
+          overflow-y: auto
+        }
+
+        .animated {
+          animation-duration: .5s;
+          animation-fill-mode: forwards;
+          animation-name: fadeInUpBig;
+          animation-timing-function: ease-in-out
+        }
+
+        .modal__middle--title {
+          font-size: 2rem;
+          line-height: 1.75rem;
+          margin: 40px 0 30px;
+          text-align: center
+        }
+      }
+
+      @media (min-width: 768px) {
+        paper-dialog {
+          display: block;
+          width: 1032px
+        }
+
+        iron-overlay-backdrop.opened {
+          display: initial
+        }
+
+        .modal--basic {
+          min-height: 648px;
+          width: 100%
+        }
+
+        .animated {
+          animation-duration: .3s;
+          animation-fill-mode: forwards;
+          animation-name: fadeIn;
+          animation-timing-function: ease-in
+        }
+
+        .modal__middle--title {
+          max-width: 555.58px;
+          font-size: 2.75rem;
+          line-height: 2.625rem;
+          margin: 40px 0 20px
+        }
+
+        .modal__middle--description p {
+          margin: 30px;
+          line-height: 1.8
+        }
+
+        .description-items {
+          flex-flow: row;
+          align-items: flex-end;
+          margin: 40px
+        }
+
+        .modal__footer {
+          margin: 20px
+        }
+      }
+    </style>
+  </template>
+
+</dom-module>
